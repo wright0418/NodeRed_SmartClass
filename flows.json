@@ -1,0 +1,165 @@
+[
+    {
+        "id": "285987c6830c03cb",
+        "type": "tab",
+        "label": "流程1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1adddf868c8b9858",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "/dev/ttyUSB0",
+        "serialbaud": "115200",
+        "databits": 8,
+        "parity": "none",
+        "stopbits": 1,
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "\\r\\n",
+        "responsetimeout": 10000
+    },
+    {
+        "id": "0b2b41abd63d07f3",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "/dev/ttyUSB0",
+        "serialbaud": "57600",
+        "databits": 8,
+        "parity": "none",
+        "stopbits": 1,
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": 10000
+    },
+    {
+        "id": "a005f1768e28e84a",
+        "type": "file",
+        "z": "285987c6830c03cb",
+        "name": "",
+        "filename": "a.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 390,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8454189d51042035",
+        "type": "inject",
+        "z": "285987c6830c03cb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 440,
+        "wires": [
+            [
+                "a005f1768e28e84a"
+            ]
+        ]
+    },
+    {
+        "id": "7bf7c654f6c1b375",
+        "type": "serial in",
+        "z": "285987c6830c03cb",
+        "name": "USB UART",
+        "serial": "1adddf868c8b9858",
+        "x": 410,
+        "y": 200,
+        "wires": [
+            [
+                "edf94eca14a3248f"
+            ]
+        ]
+    },
+    {
+        "id": "af4a4c05f62c8c7d",
+        "type": "serial out",
+        "z": "285987c6830c03cb",
+        "name": "",
+        "serial": "1adddf868c8b9858",
+        "x": 910,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "edf94eca14a3248f",
+        "type": "debug",
+        "z": "285987c6830c03cb",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "987390259f021474",
+        "type": "inject",
+        "z": "285987c6830c03cb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "AT+VER",
+        "payloadType": "str",
+        "x": 720,
+        "y": 280,
+        "wires": [
+            [
+                "af4a4c05f62c8c7d"
+            ]
+        ]
+    }
+]

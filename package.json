@@ -2,7 +2,9 @@
     "name": "NodeRed_SmartClass",
     "description": "Richlink RL62M02 BLE Mesh Application ",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-node-serialport": "2.0.3"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flows.json",

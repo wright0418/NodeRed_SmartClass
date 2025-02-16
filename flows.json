@@ -1,1 +1,99 @@
-[]
+[
+    {
+        "id": "285987c6830c03cb",
+        "type": "tab",
+        "label": "流程1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1adddf868c8b9858",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "/dev/ttyUSB0",
+        "serialbaud": "115200",
+        "databits": 8,
+        "parity": "none",
+        "stopbits": 1,
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "\\r\\n",
+        "responsetimeout": 10000
+    },
+    {
+        "id": "7bf7c654f6c1b375",
+        "type": "serial in",
+        "z": "285987c6830c03cb",
+        "name": "USB UART",
+        "serial": "1adddf868c8b9858",
+        "x": 310,
+        "y": 280,
+        "wires": [
+            [
+                "edf94eca14a3248f"
+            ]
+        ]
+    },
+    {
+        "id": "af4a4c05f62c8c7d",
+        "type": "serial out",
+        "z": "285987c6830c03cb",
+        "name": "",
+        "serial": "1adddf868c8b9858",
+        "x": 910,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "edf94eca14a3248f",
+        "type": "debug",
+        "z": "285987c6830c03cb",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "d92a173d273df8aa",
+        "type": "inject",
+        "z": "285987c6830c03cb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "?",
+        "payloadType": "str",
+        "x": 730,
+        "y": 280,
+        "wires": [
+            [
+                "af4a4c05f62c8c7d"
+            ]
+        ]
+    }
+]

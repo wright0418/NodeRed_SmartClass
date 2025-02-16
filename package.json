@@ -1,9 +1,16 @@
 {
     "name": "NodeRed_SmartClass",
-    "description": "Richlink RL62M02 BLE Mesh Application ",
+    "description": "A Node-RED Project",
     "version": "0.0.1",
     "dependencies": {
-        "node-red-node-serialport": "2.0.3"
+        "node-red-contrib-line-notify": "3.1.3",
+        "node-red-contrib-ui-digital-clock": "1.0.0",
+        "node-red-node-serialport": "2.0.2",
+        "node-red-node-ui-table": "0.4.3",
+        "node-red-node-ui-webcam": "0.5.0",
+        "node-red-contrib-openai": "1.0.3",
+        "node-red-dashboard": "3.6.5",
+        "node-red-contrib-ui-led": "0.4.11"
     },
     "node-red": {
         "settings": {

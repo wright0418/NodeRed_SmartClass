@@ -10,7 +10,8 @@
         "node-red-node-ui-webcam": "0.5.0",
         "node-red-contrib-openai": "1.0.3",
         "node-red-dashboard": "3.6.5",
-        "node-red-contrib-ui-led": "0.4.11"
+        "node-red-contrib-ui-led": "0.4.11",
+        "node-red-contrib-image-output": "0.6.4"
     },
     "node-red": {
         "settings": {

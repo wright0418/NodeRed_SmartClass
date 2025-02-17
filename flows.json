@@ -548,7 +548,7 @@
         ],
         "x": 34,
         "y": 1039,
-        "w": 592,
+        "w": 612,
         "h": 122
     },
     {
@@ -567,7 +567,7 @@
         ],
         "x": 34,
         "y": 699,
-        "w": 672,
+        "w": 612,
         "h": 82
     },
     {
@@ -589,26 +589,6 @@
         "y": 1899,
         "w": 632,
         "h": 82
-    },
-    {
-        "id": "1adddf868c8b9858",
-        "type": "serial-port",
-        "name": "",
-        "serialport": "/dev/ttyUSB0",
-        "serialbaud": "115200",
-        "databits": 8,
-        "parity": "none",
-        "stopbits": 1,
-        "waitfor": "",
-        "dtr": "none",
-        "rts": "none",
-        "cts": "none",
-        "dsr": "none",
-        "newline": "\\n",
-        "bin": "false",
-        "out": "char",
-        "addchar": "\\r\\n",
-        "responsetimeout": 10000
     },
     {
         "id": "28f5a02b81acf722",
@@ -690,10 +670,10 @@
             }
         },
         "site": {
-            "name": "TTU Lab 617",
+            "name": "PPP",
             "hideToolbar": "false",
-            "allowSwipe": "true",
-            "lockMenu": "true",
+            "allowSwipe": "false",
+            "lockMenu": "false",
             "allowTempTheme": "true",
             "dateFormat": "DD/MM/YYYY",
             "sizes": {
@@ -712,7 +692,7 @@
         "id": "7a5d15765d1785d0",
         "type": "serial-port",
         "name": "Prov_UART",
-        "serialport": "COM5",
+        "serialport": "COM6",
         "serialbaud": "115200",
         "databits": "8",
         "parity": "none",
@@ -971,26 +951,6 @@
         "width": 8,
         "collapse": false,
         "className": ""
-    },
-    {
-        "id": "a7087bc8cdad3c96",
-        "type": "ui_spacer",
-        "z": "2d7ff302c568ee90",
-        "name": "spacer",
-        "group": "9c48fcb187edb1c0",
-        "order": 3,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "3db5c2bf7ea98e7e",
-        "type": "ui_spacer",
-        "z": "2d7ff302c568ee90",
-        "name": "spacer",
-        "group": "16f25ea74cc357a2",
-        "order": 3,
-        "width": 3,
-        "height": 1
     },
     {
         "id": "3f5dc6e3e9c6b6a5",
@@ -1258,6 +1218,26 @@
         "name": "GroupNotify"
     },
     {
+        "id": "f5cb9f737ea0404f",
+        "type": "ui_spacer",
+        "z": "f85f40305fee5602",
+        "name": "spacer",
+        "group": "9c48fcb187edb1c0",
+        "order": 3,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "9ef53bf2208a8e1a",
+        "type": "ui_spacer",
+        "z": "f85f40305fee5602",
+        "name": "spacer",
+        "group": "16f25ea74cc357a2",
+        "order": 3,
+        "width": 3,
+        "height": 1
+    },
+    {
         "id": "e477a2bf70a4185d",
         "type": "serial in",
         "z": "298c337f544e92d5",
@@ -1311,7 +1291,6 @@
                 "6620c332b2fd1a8d",
                 "dec0705b0b8420b2",
                 "32f2abfea71efc55",
-                "5c44fc93dd7796c1",
                 "074ff51cecd5b7eb"
             ]
         ]
@@ -1606,14 +1585,14 @@
                 "p": "payload"
             }
         ],
-        "repeat": "1",
+        "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "AT+MDTS 0x0111 0 0 0 0x010300000002C40B",
         "payloadType": "str",
-        "x": 1030,
+        "x": 1020,
         "y": 760,
         "wires": [
             [
@@ -5251,23 +5230,6 @@
         ]
     },
     {
-        "id": "86d1e7f6d7569b42",
-        "type": "image",
-        "z": "f85f40305fee5602",
-        "g": "41a5f6edc92cb328",
-        "name": "",
-        "width": "240",
-        "data": "payload",
-        "dataType": "msg",
-        "thumbnail": false,
-        "active": true,
-        "pass": false,
-        "outputs": 0,
-        "x": 520,
-        "y": 1120,
-        "wires": []
-    },
-    {
         "id": "f41c46f15fb7b601",
         "type": "debug",
         "z": "f85f40305fee5602",
@@ -5330,20 +5292,6 @@
                 "2d700e0c5209ab5b"
             ]
         ]
-    },
-    {
-        "id": "c81789d9938fd9b0",
-        "type": "ui_digital_clock",
-        "z": "f85f40305fee5602",
-        "g": "e0cd5f2e6fa3a8b6",
-        "name": "Dclock",
-        "group": "677a19ebf2be3c4c",
-        "order": 1,
-        "width": 8,
-        "height": 1,
-        "x": 570,
-        "y": 740,
-        "wires": []
     },
     {
         "id": "37175168d9397373",
@@ -5474,7 +5422,7 @@
         "z": "f85f40305fee5602",
         "name": "",
         "group": "36ee8f40172a59c7",
-        "order": 1,
+        "order": 2,
         "width": 3,
         "height": 1,
         "passthru": false,
@@ -5578,10 +5526,40 @@
         "y": 1080,
         "wires": [
             [
-                "86d1e7f6d7569b42",
                 "f41c46f15fb7b601"
             ]
         ]
+    },
+    {
+        "id": "c81789d9938fd9b0",
+        "type": "ui_digital_clock",
+        "z": "f85f40305fee5602",
+        "g": "e0cd5f2e6fa3a8b6",
+        "name": "Dclock",
+        "group": "677a19ebf2be3c4c",
+        "order": 1,
+        "width": 8,
+        "height": 1,
+        "x": 570,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "86d1e7f6d7569b42",
+        "type": "image",
+        "z": "f85f40305fee5602",
+        "g": "41a5f6edc92cb328",
+        "name": "",
+        "width": "240",
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 520,
+        "y": 1120,
+        "wires": []
     },
     {
         "id": "f4f98c7791b39b3b",

@@ -32,17 +32,17 @@
         "env": []
     },
     {
-        "id": "12d73c8b5b4d517e",
+        "id": "2d7ff302c568ee90",
         "type": "tab",
-        "label": "ChatGPT",
+        "label": "MQTT",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "2d7ff302c568ee90",
+        "id": "8250ec7acc54b0b5",
         "type": "tab",
-        "label": "MQTT",
+        "label": "ChatGPT",
         "disabled": false,
         "info": "",
         "env": []
@@ -421,7 +421,7 @@
         ],
         "x": 134,
         "y": 439,
-        "w": 612,
+        "w": 632,
         "h": 162
     },
     {
@@ -530,8 +530,8 @@
             "2681340dcd6e7823",
             "486a5dbea3d75a02"
         ],
-        "x": 814,
-        "y": 559,
+        "x": 514,
+        "y": 539,
         "w": 872,
         "h": 242
     },
@@ -691,6 +691,52 @@
         "y": 359,
         "w": 1072,
         "h": 242
+    },
+    {
+        "id": "0d53d99ff5bb2375",
+        "type": "group",
+        "z": "8cbec6d1d47d2ee2",
+        "name": "裝置狀態顯示",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "c557bea2b1ac609e",
+            "8b31d656beef7858",
+            "8f8d0ffbf6217586",
+            "401f71bb2b254823",
+            "51e7de832ca1b2b6",
+            "c5b70cac176018c7",
+            "54dd10c75cfcdfbe"
+        ],
+        "x": 114,
+        "y": 1039,
+        "w": 832,
+        "h": 162
+    },
+    {
+        "id": "ecafa6091ee23aa4",
+        "type": "group",
+        "z": "8cbec6d1d47d2ee2",
+        "name": "搜尋裝置顯示與綁定",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "f54b1e4963170cd5",
+            "e48e67b9deb41cf2",
+            "99de58fccf0a4590",
+            "9f6e80da7a129547",
+            "14c1ec66924aafad",
+            "013c5b78ffda5222",
+            "b8c5e28b91f59c7a",
+            "877a2e87b6b69bc1",
+            "efa54db14fb13f2f"
+        ],
+        "x": 94,
+        "y": 799,
+        "w": 952,
+        "h": 202
     },
     {
         "id": "020dd99fe95b0542",
@@ -933,16 +979,6 @@
         "width": "20",
         "collapse": false,
         "className": ""
-    },
-    {
-        "id": "948e220fb9a9f1cc",
-        "type": "ui_spacer",
-        "z": "12d73c8b5b4d517e",
-        "name": "spacer",
-        "group": "fb11317658e87bd3",
-        "order": 2,
-        "width": 20,
-        "height": 1
     },
     {
         "id": "40355716c9630ec5",
@@ -1400,6 +1436,80 @@
         "order": 2,
         "disp": true,
         "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7bcbd43a6a042924",
+        "type": "ui_group",
+        "name": "修改主機設定",
+        "tab": "d50283c991ec49e9",
+        "order": 6,
+        "disp": true,
+        "width": "3",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9cc7837f7d37148e",
+        "type": "ui_spacer",
+        "z": "8250ec7acc54b0b5",
+        "name": "spacer",
+        "group": "bb48ce9b02d1c374",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "fe1604ee721c2038",
+        "type": "ui_spacer",
+        "z": "8250ec7acc54b0b5",
+        "name": "spacer",
+        "group": "17173f7c1a5033d3",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5c553dc56a1b2181",
+        "type": "ui_spacer",
+        "z": "8250ec7acc54b0b5",
+        "name": "spacer",
+        "group": "17173f7c1a5033d3",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "17173f7c1a5033d3",
+        "type": "ui_group",
+        "name": "Response",
+        "tab": "9554a493ec458fae",
+        "order": 4,
+        "disp": true,
+        "width": 26,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a6c6937c0c826ac4",
+        "type": "ui_group",
+        "name": "Option",
+        "tab": "9554a493ec458fae",
+        "order": 2,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bb48ce9b02d1c374",
+        "type": "ui_group",
+        "name": "Audio Recognition",
+        "tab": "9554a493ec458fae",
+        "order": 3,
+        "disp": true,
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -2224,8 +2334,8 @@
         "name": "link out 3",
         "mode": "link",
         "links": [],
-        "x": 1315,
-        "y": 740,
+        "x": 1015,
+        "y": 720,
         "wires": [],
         "icon": "font-awesome/fa-wifi"
     },
@@ -2247,8 +2357,8 @@
         "topic": "",
         "payload": "AT+MDTS 0x0111 0 0 0 0x010300000002C40B",
         "payloadType": "str",
-        "x": 1020,
-        "y": 760,
+        "x": 720,
+        "y": 740,
         "wires": [
             [
                 "9d6848c3cf5e4b28"
@@ -2274,8 +2384,8 @@
         "topic": "",
         "payload": "AT+MDTS 0x0102 0 0 0 0x0101001F0001CC0C",
         "payloadType": "str",
-        "x": 1050,
-        "y": 720,
+        "x": 750,
+        "y": 700,
         "wires": [
             [
                 "9d6848c3cf5e4b28"
@@ -2301,8 +2411,8 @@
         "topic": "",
         "payload": "AT+MDTS 0x0102 0 0 0 0x827681",
         "payloadType": "str",
-        "x": 1040,
-        "y": 660,
+        "x": 740,
+        "y": 640,
         "wires": [
             [
                 "9d6848c3cf5e4b28"
@@ -2317,8 +2427,8 @@
         "g": "1e4bb4113e263703",
         "name": "Sanmic Note",
         "info": "SOP:\nStep 01: Get ID\nStep 02:\nStep 03:\nStep 04:\nStep 05: Verify the result",
-        "x": 1590,
-        "y": 600,
+        "x": 1290,
+        "y": 580,
         "wires": []
     },
     {
@@ -2381,7 +2491,7 @@
         "onceDelay": 0.1,
         "topic": "DISCOVERY",
         "x": 700,
-        "y": 300,
+        "y": 320,
         "wires": [
             [
                 "a1b52ca030f104ee"
@@ -2420,7 +2530,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 690,
-        "y": 340,
+        "y": 360,
         "wires": [
             [
                 "a1b52ca030f104ee"
@@ -2493,7 +2603,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 690,
-        "y": 380,
+        "y": 400,
         "wires": [
             [
                 "a1b52ca030f104ee"
@@ -2509,8 +2619,8 @@
             "cccc0ef474ab1a04",
             "df8e445e85cee804"
         ],
-        "x": 795,
-        "y": 40,
+        "x": 765,
+        "y": 100,
         "wires": [
             [
                 "a1b52ca030f104ee"
@@ -2584,8 +2694,8 @@
         "once": true,
         "onceDelay": "1",
         "topic": "ATCMD",
-        "x": 510,
-        "y": 200,
+        "x": 670,
+        "y": 220,
         "wires": [
             [
                 "a1b52ca030f104ee"
@@ -2654,8 +2764,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "ATCMD",
-        "x": 490,
-        "y": 260,
+        "x": 450,
+        "y": 280,
         "wires": [
             [
                 "d97b8fcf523a8dbf"
@@ -2666,7 +2776,7 @@
         "id": "2708002fe7df1c7f",
         "type": "link out",
         "z": "298c337f544e92d5",
-        "name": "To MDTG",
+        "name": "To MDTG ( MESH 裝置回傳)",
         "mode": "link",
         "links": [],
         "x": 1285,
@@ -2745,8 +2855,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
-        "y": 260,
+        "x": 660,
+        "y": 280,
         "wires": [
             [
                 "a1b52ca030f104ee"
@@ -2770,8 +2880,8 @@
         "z": "298c337f544e92d5",
         "name": "",
         "serial": "7a5d15765d1785d0",
-        "x": 510,
-        "y": 120,
+        "x": 490,
+        "y": 180,
         "wires": [
             [
                 "9a8ecc28923fdb58",
@@ -2808,8 +2918,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 720,
-        "y": 120,
+        "x": 700,
+        "y": 180,
         "wires": [
             [
                 "a1b52ca030f104ee"
@@ -2829,8 +2939,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 720,
-        "y": 80,
+        "x": 700,
+        "y": 140,
         "wires": []
     },
     {
@@ -3302,6 +3412,17 @@
         ]
     },
     {
+        "id": "02a756487bf4dfed",
+        "type": "comment",
+        "z": "298c337f544e92d5",
+        "name": "Proving Gating",
+        "info": "因為 處理  AT+NL 會影響到綁定\n故 使用此 Node 判斷 global var 是否處於綁定過程\n去遮斷 AT+NL ",
+        "x": 480,
+        "y": 240,
+        "wires": [],
+        "icon": "node-red/alert.svg"
+    },
+    {
         "id": "cbc8c7dde36554ed",
         "type": "ui_gauge",
         "z": "f85f40305fee5602",
@@ -3450,12 +3571,12 @@
         "id": "df8e445e85cee804",
         "type": "link out",
         "z": "f85f40305fee5602",
-        "name": "link out 4",
+        "name": "To RL62M MESH IN",
         "mode": "link",
         "links": [
             "d9717fc33326853d"
         ],
-        "x": 1505,
+        "x": 1415,
         "y": 1020,
         "wires": [],
         "icon": "font-awesome/fa-wifi"
@@ -3486,8 +3607,8 @@
         "g": "eff4a73a11ad3f9f",
         "name": "WebGUI",
         "links": [],
-        "x": 75,
-        "y": 940,
+        "x": 175,
+        "y": 960,
         "wires": [
             [
                 "c053997cd49abc10"
@@ -7340,7 +7461,7 @@
         "bgcolor": "",
         "className": "",
         "icon": "",
-        "payload": "AT+SUB",
+        "payload": "SUB",
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
@@ -7358,7 +7479,7 @@
         "z": "8cbec6d1d47d2ee2",
         "g": "53147285f52a0f53",
         "name": "訂閱",
-        "func": "context.data = context.data || {}\n\nswitch (msg.topic){\n    case (\"UID\"):\n        context.data.uid = msg.payload\n        msg =null\n        break;\n    case (\"SUB\"):\n        context.data.sub = msg.payload\n        msg =null\n        break;\n    default:\n        break;\n        \n}\nif (msg.payload == \"SUB\"){\n    if (context.data.uid != null && context.data.sub != null && msg != null){\n        return { cmd: \"SUB\", uid: context.data.uid, sub: context.data.sub }\n    }\n}\n\n\n",
+        "func": "context.data = context.data || {}\n\nswitch (msg.topic){\n    case (\"UID\"):\n        context.data.uid = msg.payload\n        msg =null\n        break;\n    case (\"SUB\"):\n        context.data.sub = msg.payload\n        msg =null\n        break;\n    default:\n        break;\n        \n}\nif (msg.payload == \"SUB\"){\n    if (context.data.uid != null && context.data.sub != null){\n        return { topic: \"ATCMD\" , cmd: \"SUB\", uid: context.data.uid, sub: context.data.sub }\n    }\n}\n\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -7390,8 +7511,8 @@
         "className": "",
         "topic": "訂閱成功",
         "name": "",
-        "x": 630,
-        "y": 560,
+        "x": 650,
+        "y": 520,
         "wires": []
     },
     {
@@ -7483,7 +7604,7 @@
         "z": "8cbec6d1d47d2ee2",
         "g": "5c4450d7d986425b",
         "name": "推播",
-        "func": "context.data = context.data || {}\n\nswitch (msg.topic){\n    case (\"UID\"):\n        context.data.uid = msg.payload\n        msg =null\n        break;\n    case (\"PUB\"):\n        context.data.pub = msg.payload\n        msg =null\n        break;\n    default:\n        break;\n        \n}\n\n\nif (msg.payload == \"PUB\") {\n    if (context.data.uid != null && context.data.sub != null && msg != null) {\n        return { cmd: \"PUB\", uid: context.data.uid, pub: context.data.pub }\n    }\n}\n\n",
+        "func": "context.data = context.data || {}\n\nswitch (msg.topic){\n    case (\"UID\"):\n        context.data.uid = msg.payload\n        msg =null\n        break;\n    case (\"PUB\"):\n        context.data.pub = msg.payload\n        msg =null\n        break;\n    default:\n        break;\n        \n}\n\nif (msg.payload == \"PUB\") {\n\n    if (context.data.uid != null && context.data.pub != null) {\n        return { topic: \"ATCMD\" ,cmd: \"PUB\", uid: context.data.uid, pub: context.data.pub }\n    }\n}\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -7516,7 +7637,7 @@
         "topic": "推播設定成功",
         "name": "",
         "x": 630,
-        "y": 740,
+        "y": 700,
         "wires": []
     },
     {
@@ -7623,6 +7744,7 @@
         "id": "f54b1e4963170cd5",
         "type": "ui_toast",
         "z": "8cbec6d1d47d2ee2",
+        "g": "ecafa6091ee23aa4",
         "position": "top right",
         "displayTime": "3",
         "highlight": "",
@@ -7642,6 +7764,7 @@
         "id": "e48e67b9deb41cf2",
         "type": "ui_table",
         "z": "8cbec6d1d47d2ee2",
+        "g": "ecafa6091ee23aa4",
         "group": "91ac9518a0b9be8c",
         "name": "Devices List",
         "order": 1,
@@ -7671,7 +7794,7 @@
         ],
         "outputs": 1,
         "cts": true,
-        "x": 590,
+        "x": 570,
         "y": 840,
         "wires": [
             [
@@ -7683,11 +7806,12 @@
         "id": "99de58fccf0a4590",
         "type": "link in",
         "z": "8cbec6d1d47d2ee2",
+        "g": "ecafa6091ee23aa4",
         "name": "DISCOVERY IN",
         "links": [
             "37f61c2a0737d62a"
         ],
-        "x": 125,
+        "x": 135,
         "y": 840,
         "wires": [
             [
@@ -7699,6 +7823,7 @@
         "id": "9f6e80da7a129547",
         "type": "change",
         "z": "8cbec6d1d47d2ee2",
+        "g": "ecafa6091ee23aa4",
         "name": "Set Binding CMD",
         "rules": [
             {
@@ -7728,7 +7853,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 790,
+        "x": 770,
         "y": 840,
         "wires": [
             [
@@ -7741,6 +7866,7 @@
         "id": "14c1ec66924aafad",
         "type": "switch",
         "z": "8cbec6d1d47d2ee2",
+        "g": "ecafa6091ee23aa4",
         "name": "",
         "property": "topic",
         "propertyType": "msg",
@@ -7776,6 +7902,7 @@
         "id": "013c5b78ffda5222",
         "type": "ui_toast",
         "z": "8cbec6d1d47d2ee2",
+        "g": "ecafa6091ee23aa4",
         "position": "top right",
         "displayTime": "3",
         "highlight": "",
@@ -7787,7 +7914,7 @@
         "className": "",
         "topic": "開始綁定流程",
         "name": "Start綁定",
-        "x": 980,
+        "x": 960,
         "y": 840,
         "wires": []
     },
@@ -7795,6 +7922,7 @@
         "id": "b8c5e28b91f59c7a",
         "type": "change",
         "z": "8cbec6d1d47d2ee2",
+        "g": "ecafa6091ee23aa4",
         "name": "clear Table",
         "rules": [
             {
@@ -7822,6 +7950,7 @@
         "id": "877a2e87b6b69bc1",
         "type": "function",
         "z": "8cbec6d1d47d2ee2",
+        "g": "ecafa6091ee23aa4",
         "name": "Add Node",
         "func": "var jsonFile = global.get(\"jsonFile\")\nvar uid = msg.payload.uid\nvar devMac = msg.payload.mac\nvar device = { devMac, devName: \"\", devType: msg.payload , devPosition :\"\" , devGroup :\"\" , uid, \"state\": 1 }\njsonFile.devices.push(device)\nglobal.set(\"jsonFile\", jsonFile)\nreturn { payload: jsonFile };",
         "outputs": 1,
@@ -7842,6 +7971,7 @@
         "id": "efa54db14fb13f2f",
         "type": "link out",
         "z": "8cbec6d1d47d2ee2",
+        "g": "ecafa6091ee23aa4",
         "name": "link out 1",
         "mode": "link",
         "links": [
@@ -7852,291 +7982,157 @@
         "wires": []
     },
     {
-        "id": "7a03aee212c51ea4",
-        "type": "ui_text_input",
-        "z": "12d73c8b5b4d517e",
-        "name": "",
-        "label": "設定管家",
-        "tooltip": "",
-        "group": "fb11317658e87bd3",
-        "order": 1,
-        "width": 20,
-        "height": 2,
-        "passthru": true,
-        "mode": "text",
-        "delay": "0",
-        "topic": "topic",
-        "sendOnBlur": true,
-        "className": "big",
-        "topicType": "msg",
-        "x": 140,
-        "y": 200,
+        "id": "c557bea2b1ac609e",
+        "type": "function",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "0d53d99ff5bb2375",
+        "name": "set table data",
+        "func": "\nif ( msg.payload.uid != \"NOT_FOUND\"){\n    var jsonFile = global.get (\"jsonFile\")\n    var devices = jsonFile.devices\n    \n    return {payload : devices}\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 1080,
         "wires": [
             [
-                "019064cde670b706"
+                "8b31d656beef7858",
+                "8f8d0ffbf6217586"
             ]
-        ],
-        "inputLabels": [
-            "7777"
         ]
     },
     {
-        "id": "843665f70c99691a",
-        "type": "ui_text",
-        "z": "12d73c8b5b4d517e",
-        "group": "fb11317658e87bd3",
-        "order": 5,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "回答",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#000000",
+        "id": "8b31d656beef7858",
+        "type": "ui_table",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "0d53d99ff5bb2375",
+        "group": "d96c0dea78d55eb4",
+        "name": "Show Device",
+        "order": 2,
+        "width": "12",
+        "height": "4",
+        "columns": [
+            {
+                "field": "state",
+                "title": "在線",
+                "width": "",
+                "align": "center",
+                "formatter": "tickCross",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "devName",
+                "title": "類別名稱",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "uid",
+                "title": "UID",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "devMac",
+                "title": "MAC Addr",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "devPosition",
+                "title": "位置",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "devType",
+                "title": "裝置敘述",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 1,
+        "cts": true,
         "x": 850,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "d747f771e35f8658",
-        "type": "ui_text_input",
-        "z": "12d73c8b5b4d517e",
-        "name": "",
-        "label": "輸入",
-        "tooltip": "",
-        "group": "fb11317658e87bd3",
-        "order": 3,
-        "width": 20,
-        "height": 2,
-        "passthru": false,
-        "mode": "text",
-        "delay": "0",
-        "topic": "topic",
-        "sendOnBlur": true,
-        "className": "",
-        "topicType": "msg",
-        "x": 130,
-        "y": 260,
-        "wires": [
-            [
-                "ec6f2646cf1204a4"
-            ]
-        ]
-    },
-    {
-        "id": "2525af3f8e2dd062",
-        "type": "ui_button",
-        "z": "12d73c8b5b4d517e",
-        "name": "",
-        "group": "fb11317658e87bd3",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "label": "送出",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 130,
-        "y": 320,
-        "wires": [
-            [
-                "787793438fa382d8"
-            ]
-        ]
-    },
-    {
-        "id": "0e5f6a7871cadba3",
-        "type": "function",
-        "z": "12d73c8b5b4d517e",
-        "name": "取得回應",
-        "func": "var data = msg.payload\nmsg.payload = data.choices[0].message.content\nmsg.topic = \"command\"\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 680,
-        "y": 320,
-        "wires": [
-            [
-                "843665f70c99691a",
-                "69e13ff9d0ae1abe",
-                "d4c075889e7b32ed"
-            ]
-        ]
-    },
-    {
-        "id": "7fd1c8f4e80956c3",
-        "type": "openai",
-        "z": "12d73c8b5b4d517e",
-        "name": "OpenAI",
-        "api": "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",
-        "creds": "f3b36070034d01cb",
-        "x": 520,
-        "y": 320,
-        "wires": [
-            [
-                "0e5f6a7871cadba3",
-                "901af778831412c6"
-            ]
-        ]
-    },
-    {
-        "id": "787793438fa382d8",
-        "type": "function",
-        "z": "12d73c8b5b4d517e",
-        "name": "準備 OPENAI 資料",
-        "func": "\nmsg.api = 'chat/completions';\nvar system_content = flow.get(\"GPT_system\");\nvar content = flow.get (\"user_content\");\nmsg.params = {\n    \"model\": \"gpt-4\",\n    \"messages\": [\n        {\n            \"role\": \"system\",\n            \"content\": \"\",\n        },\n        {\n            \"role\": \"user\",\n            \"content\": \"\",\n        }\n    ],\n    \"max_tokens\": 100,\n    \"temperature\": 0\n}\n\nmsg.params.messages[0].content = system_content;\nmsg.params.messages[1].content = content;\nreturn msg",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 330,
-        "y": 320,
-        "wires": [
-            [
-                "7fd1c8f4e80956c3"
-            ]
-        ],
-        "icon": "font-awesome/fa-th-list"
-    },
-    {
-        "id": "019064cde670b706",
-        "type": "change",
-        "z": "12d73c8b5b4d517e",
-        "name": "設定管家指令",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload",
-                "pt": "msg",
-                "to": "GPT_system",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 340,
-        "y": 200,
+        "y": 1140,
         "wires": [
             []
         ]
     },
     {
-        "id": "ec6f2646cf1204a4",
-        "type": "change",
-        "z": "12d73c8b5b4d517e",
-        "name": "設定輸入的內容",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload",
-                "pt": "msg",
-                "to": "user_content",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 340,
-        "y": 260,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "69e13ff9d0ae1abe",
-        "type": "ui_audio",
-        "z": "12d73c8b5b4d517e",
-        "name": "播放聲音",
-        "group": "fb11317658e87bd3",
-        "voice": "Microsoft Yating - Chinese (Traditional, Taiwan)",
-        "always": "",
-        "x": 860,
-        "y": 360,
+        "id": "8f8d0ffbf6217586",
+        "type": "debug",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "0d53d99ff5bb2375",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 1080,
         "wires": []
     },
     {
-        "id": "d4c075889e7b32ed",
-        "type": "function",
-        "z": "12d73c8b5b4d517e",
-        "name": "傳送開啟 or 關閉給UID ",
-        "func": "var uid = flow.get(\"plugUID\");\nif (msg.payload.includes(\"開啟\") == true)\n    return {payload :\"AT+MDTS \"+ uid + \" 0 0 0 0x8702000101\"};\nif (msg.payload.includes(\"關閉\") == true)\n    return {payload: \"AT+MDTS \"+ uid + \" 0 0 0 0x8702000100\"};\n",
+        "id": "401f71bb2b254823",
+        "type": "delay",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "0d53d99ff5bb2375",
+        "name": "delay50ms",
+        "pauseType": "delay",
+        "timeout": "50",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
         "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 900,
-        "y": 320,
+        "x": 450,
+        "y": 1080,
         "wires": [
             [
-                "049862c4037b496b"
+                "c557bea2b1ac609e"
             ]
         ]
     },
     {
-        "id": "049862c4037b496b",
-        "type": "link out",
-        "z": "12d73c8b5b4d517e",
-        "name": "link out 7",
-        "mode": "link",
-        "links": [],
-        "x": 1055,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "81217d6c68830c1f",
-        "type": "change",
-        "z": "12d73c8b5b4d517e",
-        "name": "設定插座UID",
-        "rules": [
-            {
-                "t": "set",
-                "p": "plugUID",
-                "pt": "flow",
-                "to": "0x0100",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 390,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "518d37de18c4c488",
+        "id": "51e7de832ca1b2b6",
         "type": "inject",
-        "z": "12d73c8b5b4d517e",
-        "name": "初始設定觸發",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "0d53d99ff5bb2375",
+        "name": "reload show",
         "props": [
             {
                 "p": "payload"
@@ -8146,45 +8142,52 @@
                 "vt": "str"
             }
         ],
-        "repeat": "",
+        "repeat": "10",
         "crontab": "",
-        "once": true,
+        "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 180,
-        "y": 140,
+        "x": 230,
+        "y": 1100,
         "wires": [
             [
-                "81217d6c68830c1f"
+                "401f71bb2b254823",
+                "c5b70cac176018c7"
             ]
         ]
     },
     {
-        "id": "901af778831412c6",
-        "type": "debug",
-        "z": "12d73c8b5b4d517e",
-        "name": "debug 19",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 680,
-        "y": 360,
-        "wires": []
+        "id": "c5b70cac176018c7",
+        "type": "function",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "0d53d99ff5bb2375",
+        "name": "clear data",
+        "func": "    \n    return {payload : []}\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 1140,
+        "wires": [
+            [
+                "8b31d656beef7858"
+            ]
+        ]
     },
     {
-        "id": "47415090ab6ebdcd",
+        "id": "54dd10c75cfcdfbe",
         "type": "comment",
-        "z": "12d73c8b5b4d517e",
-        "name": "Sanmic Note",
-        "info": "SOP:\nStep 01: Get API Key and Token\nStep 02:\nStep 03:\nStep 04:\nStep 05:  Verify the result\n\n你是一台冷氣機，當我說熱的時候，你要回答開啟，當我說冷的時候，你要回答關閉\n我好熱\n\n",
-        "x": 990,
-        "y": 140,
+        "z": "8cbec6d1d47d2ee2",
+        "g": "0d53d99ff5bb2375",
+        "name": "",
+        "info": "固定10sec\n清除  table 後 \n抓取  device json 變數 顯示於 table ",
+        "x": 190,
+        "y": 1160,
         "wires": []
     },
     {
@@ -8348,5 +8351,813 @@
         "x": 850,
         "y": 120,
         "wires": []
+    },
+    {
+        "id": "0c7912d713b79779",
+        "type": "ui_text_input",
+        "z": "8250ec7acc54b0b5",
+        "name": "",
+        "label": "設定角色",
+        "tooltip": "",
+        "group": "fb11317658e87bd3",
+        "order": 1,
+        "width": 8,
+        "height": 2,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "big",
+        "topicType": "msg",
+        "x": 280,
+        "y": 120,
+        "wires": [
+            [
+                "90cfaae73f641e1c"
+            ]
+        ],
+        "inputLabels": [
+            "7777"
+        ]
+    },
+    {
+        "id": "c2c7132e39e20f52",
+        "type": "ui_text",
+        "z": "8250ec7acc54b0b5",
+        "group": "17173f7c1a5033d3",
+        "order": 2,
+        "width": 24,
+        "height": 1,
+        "name": "",
+        "label": "回答",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1190,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "2a6fb02ae241720e",
+        "type": "ui_text_input",
+        "z": "8250ec7acc54b0b5",
+        "name": "",
+        "label": "輸入",
+        "tooltip": "",
+        "group": "fb11317658e87bd3",
+        "order": 2,
+        "width": 8,
+        "height": 1,
+        "passthru": false,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 270,
+        "y": 160,
+        "wires": [
+            [
+                "b6344163995256bf"
+            ]
+        ]
+    },
+    {
+        "id": "ea58ca5775702fe1",
+        "type": "ui_button",
+        "z": "8250ec7acc54b0b5",
+        "name": "",
+        "group": "fb11317658e87bd3",
+        "order": 3,
+        "width": 8,
+        "height": 1,
+        "passthru": false,
+        "label": "送出",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 270,
+        "y": 200,
+        "wires": [
+            [
+                "27204de6a98939fc"
+            ]
+        ]
+    },
+    {
+        "id": "394fee8dc155e255",
+        "type": "function",
+        "z": "8250ec7acc54b0b5",
+        "name": "取得回應",
+        "func": "var data = msg.payload\nmsg.payload = data.choices[0].message.content\nmsg.topic = \"command\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 360,
+        "wires": [
+            [
+                "c2c7132e39e20f52",
+                "6699b697c6e8af0e",
+                "1a6b6e9bc7562525"
+            ]
+        ]
+    },
+    {
+        "id": "e0f1880c51063453",
+        "type": "openai",
+        "z": "8250ec7acc54b0b5",
+        "name": "OpenAI",
+        "api": "sk-TWR況dV0wACnGVld2Z2lGaT3BlbkFJzuHJZsQdL7kledtbVNnk",
+        "creds": "f3b36070034d01cb",
+        "x": 860,
+        "y": 360,
+        "wires": [
+            [
+                "394fee8dc155e255",
+                "ec2d0307f303c3e6"
+            ]
+        ]
+    },
+    {
+        "id": "27204de6a98939fc",
+        "type": "function",
+        "z": "8250ec7acc54b0b5",
+        "name": "準備 OPENAI 資料",
+        "func": "\nmsg.api = 'chat/completions';\nvar system_content = flow.get(\"GPT_system\");\nvar content = flow.get (\"user_content\");\nmsg.params = {\n    \"model\": \"gpt-4\",\n    \"messages\": [\n        {\n            \"role\": \"system\",\n            \"content\": \"\",\n        },\n        {\n            \"role\": \"user\",\n            \"content\": \"\",\n        }\n    ],\n    \"max_tokens\": 100,\n    \"temperature\": 0\n}\n\nmsg.params.messages[0].content = system_content;\nmsg.params.messages[1].content = content;\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 200,
+        "wires": [
+            [
+                "f0329408dc4fe205"
+            ]
+        ],
+        "icon": "font-awesome/fa-th-list"
+    },
+    {
+        "id": "90cfaae73f641e1c",
+        "type": "change",
+        "z": "8250ec7acc54b0b5",
+        "name": "設定角色指令",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "GPT_system",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b6344163995256bf",
+        "type": "change",
+        "z": "8250ec7acc54b0b5",
+        "name": "設定輸入的內容",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "user_content",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6699b697c6e8af0e",
+        "type": "ui_audio",
+        "z": "8250ec7acc54b0b5",
+        "name": "播放聲音",
+        "group": "fb11317658e87bd3",
+        "voice": "Microsoft Yating - Chinese (Traditional, Taiwan)",
+        "always": "",
+        "x": 1200,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "1a6b6e9bc7562525",
+        "type": "function",
+        "z": "8250ec7acc54b0b5",
+        "name": "Parse 開啟關閉",
+        "func": "\nif (msg.payload.includes(\"開啟\") == true)\n    return {payload:true}\n\nif (msg.payload.includes(\"關閉\") == true)\n    return {payload:false}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 360,
+        "wires": [
+            [
+                "bb9242bc2cc1acb9"
+            ]
+        ]
+    },
+    {
+        "id": "d0b81c7f556f5f6a",
+        "type": "link out",
+        "z": "8250ec7acc54b0b5",
+        "name": "link out 7",
+        "mode": "link",
+        "links": [],
+        "x": 1505,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "4338369cb930d5b1",
+        "type": "change",
+        "z": "8250ec7acc54b0b5",
+        "name": "設定插座UID",
+        "rules": [
+            {
+                "t": "set",
+                "p": "plugUID",
+                "pt": "flow",
+                "to": "0x0100",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "94588e9c2dec8f16",
+        "type": "inject",
+        "z": "8250ec7acc54b0b5",
+        "name": "初始設定觸發",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 300,
+        "y": 80,
+        "wires": [
+            [
+                "4338369cb930d5b1"
+            ]
+        ]
+    },
+    {
+        "id": "ec2d0307f303c3e6",
+        "type": "debug",
+        "z": "8250ec7acc54b0b5",
+        "name": "debug 19",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "0fc7d01a1c3a4e06",
+        "type": "comment",
+        "z": "8250ec7acc54b0b5",
+        "name": "Sanmic Note",
+        "info": "SOP:\nStep 01: Get API Key and Token\nStep 02:\nStep 03:\nStep 04:\nStep 05:  Verify the result\n\n你是一台冷氣機，當我說熱的時候，你要回答開啟，當我說冷的時候，你要回答關閉\n我好熱\n\n",
+        "x": 990,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "32b1b34bf7f24f1f",
+        "type": "ui_dropdown",
+        "z": "8250ec7acc54b0b5",
+        "name": "",
+        "label": "Input",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "a6c6937c0c826ac4",
+        "order": 2,
+        "width": 8,
+        "height": 1,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "我好冷",
+                "value": "我好冷",
+                "type": "str"
+            },
+            {
+                "label": "我好熱",
+                "value": "我好熱",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "payload",
+        "topicType": "msg",
+        "className": "",
+        "x": 270,
+        "y": 320,
+        "wires": [
+            [
+                "a54bab35028f5e6d"
+            ]
+        ],
+        "inputLabels": [
+            "7777"
+        ]
+    },
+    {
+        "id": "bb3b17b1ca8b382c",
+        "type": "ui_dropdown",
+        "z": "8250ec7acc54b0b5",
+        "name": "",
+        "label": "Set_Role",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "a6c6937c0c826ac4",
+        "order": 1,
+        "width": 8,
+        "height": 2,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "現在你是一台冷氣  當我說冷  你要回答 調高溫度",
+                "value": "現在你是一台冷氣  當我說冷  你要回答 調高溫度",
+                "type": "str"
+            },
+            {
+                "label": "現在你是一台冷氣  當我說熱  你要回答 調低溫度",
+                "value": "現在你是一台冷氣  當我說熱  你要回答 調低溫度",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "payload",
+        "topicType": "msg",
+        "className": "",
+        "x": 280,
+        "y": 280,
+        "wires": [
+            [
+                "11acf4b6226dddfc"
+            ]
+        ],
+        "inputLabels": [
+            "7777"
+        ]
+    },
+    {
+        "id": "11acf4b6226dddfc",
+        "type": "change",
+        "z": "8250ec7acc54b0b5",
+        "name": "設定角色指令",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "GPT_system_opt",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a54bab35028f5e6d",
+        "type": "change",
+        "z": "8250ec7acc54b0b5",
+        "name": "設定輸入的內容",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "user_content_opt",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f0329408dc4fe205",
+        "type": "link out",
+        "z": "8250ec7acc54b0b5",
+        "name": "Manual_AI_in",
+        "mode": "link",
+        "links": [
+            "a804a1d4c8562e51"
+        ],
+        "x": 655,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a804a1d4c8562e51",
+        "type": "link in",
+        "z": "8250ec7acc54b0b5",
+        "name": "ChatGPT_In",
+        "links": [
+            "f0329408dc4fe205",
+            "ba37983aac069bcf",
+            "dde6659c5a86100f"
+        ],
+        "x": 755,
+        "y": 360,
+        "wires": [
+            [
+                "e0f1880c51063453"
+            ]
+        ]
+    },
+    {
+        "id": "eee505c0d3412c02",
+        "type": "ui_button",
+        "z": "8250ec7acc54b0b5",
+        "name": "",
+        "group": "a6c6937c0c826ac4",
+        "order": 3,
+        "width": 8,
+        "height": 1,
+        "passthru": false,
+        "label": "Send",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 270,
+        "y": 360,
+        "wires": [
+            [
+                "f34ac9d522a8a711"
+            ]
+        ]
+    },
+    {
+        "id": "f34ac9d522a8a711",
+        "type": "function",
+        "z": "8250ec7acc54b0b5",
+        "name": "準備 OPENAI 資料",
+        "func": "\nmsg.api = 'chat/completions';\nvar system_content = flow.get(\"GPT_system_opt\");\nvar content = flow.get (\"user_content_opt\");\nmsg.params = {\n    \"model\": \"gpt-4\",\n    \"messages\": [\n        {\n            \"role\": \"system\",\n            \"content\": \"\",\n        },\n        {\n            \"role\": \"user\",\n            \"content\": \"\",\n        }\n    ],\n    \"max_tokens\": 100,\n    \"temperature\": 0\n}\n\nmsg.params.messages[0].content = system_content;\nmsg.params.messages[1].content = content;\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 360,
+        "wires": [
+            [
+                "ba37983aac069bcf"
+            ]
+        ],
+        "icon": "font-awesome/fa-th-list"
+    },
+    {
+        "id": "ba37983aac069bcf",
+        "type": "link out",
+        "z": "8250ec7acc54b0b5",
+        "name": "Manual_AI_in",
+        "mode": "link",
+        "links": [
+            "a804a1d4c8562e51"
+        ],
+        "x": 665,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "70353dd208f93345",
+        "type": "ui_microphone",
+        "z": "8250ec7acc54b0b5",
+        "name": "",
+        "group": "bb48ce9b02d1c374",
+        "order": 3,
+        "width": 1,
+        "height": 1,
+        "maxLength": 5,
+        "maxRecogLength": 5,
+        "timeslice": 0,
+        "press": "press",
+        "mode": "recog",
+        "interimResults": false,
+        "x": 90,
+        "y": 420,
+        "wires": [
+            [
+                "a8807b6fdd1ef143"
+            ]
+        ]
+    },
+    {
+        "id": "a8807b6fdd1ef143",
+        "type": "ui_text_input",
+        "z": "8250ec7acc54b0b5",
+        "name": "",
+        "label": "設定角色",
+        "tooltip": "",
+        "group": "bb48ce9b02d1c374",
+        "order": 1,
+        "width": 9,
+        "height": 2,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "big",
+        "topicType": "msg",
+        "x": 280,
+        "y": 420,
+        "wires": [
+            [
+                "48eb330958b63060"
+            ]
+        ],
+        "inputLabels": [
+            "7777"
+        ]
+    },
+    {
+        "id": "dde6659c5a86100f",
+        "type": "link out",
+        "z": "8250ec7acc54b0b5",
+        "name": "Manual_AI_in",
+        "mode": "link",
+        "links": [
+            "a804a1d4c8562e51"
+        ],
+        "x": 665,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "ab8c69946e5f756f",
+        "type": "ui_microphone",
+        "z": "8250ec7acc54b0b5",
+        "name": "",
+        "group": "bb48ce9b02d1c374",
+        "order": 5,
+        "width": 1,
+        "height": 1,
+        "maxLength": 5,
+        "maxRecogLength": 5,
+        "timeslice": 0,
+        "press": "press",
+        "mode": "recog",
+        "interimResults": false,
+        "x": 90,
+        "y": 460,
+        "wires": [
+            [
+                "4bddd4657b2e59cd"
+            ]
+        ]
+    },
+    {
+        "id": "48eb330958b63060",
+        "type": "change",
+        "z": "8250ec7acc54b0b5",
+        "name": "設定角色指令",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "GPT_system_opt1",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a69951ce74752b8a",
+        "type": "change",
+        "z": "8250ec7acc54b0b5",
+        "name": "設定輸入的內容",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "user_content_opt1",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4bddd4657b2e59cd",
+        "type": "ui_text_input",
+        "z": "8250ec7acc54b0b5",
+        "name": "",
+        "label": "輸入",
+        "tooltip": "",
+        "group": "bb48ce9b02d1c374",
+        "order": 4,
+        "width": 9,
+        "height": 1,
+        "passthru": false,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 270,
+        "y": 460,
+        "wires": [
+            [
+                "a69951ce74752b8a"
+            ]
+        ]
+    },
+    {
+        "id": "5e87ce66cea5a029",
+        "type": "ui_button",
+        "z": "8250ec7acc54b0b5",
+        "name": "",
+        "group": "bb48ce9b02d1c374",
+        "order": 6,
+        "width": 10,
+        "height": 1,
+        "passthru": false,
+        "label": "送出",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 270,
+        "y": 500,
+        "wires": [
+            [
+                "18097df3e9286ed7"
+            ]
+        ]
+    },
+    {
+        "id": "18097df3e9286ed7",
+        "type": "function",
+        "z": "8250ec7acc54b0b5",
+        "name": "準備 OPENAI 資料",
+        "func": "\nmsg.api = 'chat/completions';\nvar system_content = flow.get(\"GPT_system_opt1\");\nvar content = flow.get (\"user_content_opt1\");\nmsg.params = {\n    \"model\": \"gpt-4\",\n    \"messages\": [\n        {\n            \"role\": \"system\",\n            \"content\": \"\",\n        },\n        {\n            \"role\": \"user\",\n            \"content\": \"\",\n        }\n    ],\n    \"max_tokens\": 100,\n    \"temperature\": 0\n}\n\nmsg.params.messages[0].content = system_content;\nmsg.params.messages[1].content = content;\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 500,
+        "wires": [
+            [
+                "dde6659c5a86100f"
+            ]
+        ],
+        "icon": "font-awesome/fa-th-list"
+    },
+    {
+        "id": "bb9242bc2cc1acb9",
+        "type": "change",
+        "z": "8250ec7acc54b0b5",
+        "name": "Set PLUG",
+        "rules": [
+            {
+                "t": "move",
+                "p": "plugUID",
+                "pt": "flow",
+                "to": "uid",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "PLUG",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1390,
+        "y": 360,
+        "wires": [
+            [
+                "d0b81c7f556f5f6a"
+            ]
+        ]
     }
 ]

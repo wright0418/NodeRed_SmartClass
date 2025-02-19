@@ -16,6 +16,14 @@
         "env": []
     },
     {
+        "id": "cb274e359e92b965",
+        "type": "tab",
+        "label": "MODBUS RTU",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "fe798ccc3bac8377",
         "type": "tab",
         "label": "File Management",
@@ -43,6 +51,14 @@
         "id": "8250ec7acc54b0b5",
         "type": "tab",
         "label": "ChatGPT",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f4d5b0e1aaeccda0",
+        "type": "tab",
+        "label": "IR學習",
         "disabled": false,
         "info": "",
         "env": []
@@ -141,6 +157,294 @@
         }
     },
     {
+        "id": "914e2eba85ee9a8d",
+        "type": "subflow",
+        "name": "ePy Device",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 200,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "9820d2b747be8638"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1080,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "27ee1a6d20bd0a50",
+                        "port": 0
+                    },
+                    {
+                        "id": "58fb712575476ffb",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 660,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "f132dcd90a78d2ed",
+                        "port": 2
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "uid",
+                "type": "str",
+                "value": "0x0000"
+            }
+        ],
+        "meta": {},
+        "color": "#3FADB5",
+        "inputLabels": [
+            "MDTG_MSG"
+        ],
+        "outputLabels": [
+            "CTRL PLUG/COLOR",
+            "READ_OTHER"
+        ],
+        "status": {
+            "x": 460,
+            "y": 60,
+            "wires": [
+                {
+                    "id": "9820d2b747be8638",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "03d6d793edc7201f",
+        "type": "subflow",
+        "name": "SmartBox Epy Sensor",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 320,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "7f82b9a9d1ec7c02"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 880,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "4a33f0a3bc0911d9",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 910,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "5ba7d01a1624c6ab",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "uid",
+                "type": "str",
+                "value": "0x0100"
+            }
+        ],
+        "meta": {},
+        "color": "#3FADB5",
+        "inputLabels": [
+            "MDTG Msg"
+        ],
+        "outputLabels": [
+            "DI",
+            "Sensor out"
+        ]
+    },
+    {
+        "id": "2e6531b05546862f",
+        "type": "subflow",
+        "name": "SmartBox RTU電表",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 220,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "3ef81333fc7ee2f8"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 740,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "7e1062a3643b1825",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 740,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "d5bb6167aee67909",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "uid",
+                "type": "str",
+                "value": "0x0103"
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99",
+        "inputLabels": [
+            "MDTG Msg"
+        ],
+        "outputLabels": [
+            "DI status",
+            "電表out"
+        ]
+    },
+    {
+        "id": "7aad34d962cf9ce2",
+        "type": "subflow",
+        "name": "SmartBox溫控_Recv",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 200,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "248693e7f1f3774f"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 800,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "aa3e8f4a3830fdbf",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 800,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "cd76647f60a37629",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "uid",
+                "type": "str",
+                "value": "0x0102"
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99",
+        "inputLabels": [
+            "MDTG msg"
+        ],
+        "outputLabels": [
+            "DI Status",
+            "RTU out"
+        ]
+    },
+    {
+        "id": "c2e250b5f7368324",
+        "type": "subflow",
+        "name": "rebuild RTU packet",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 80,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "7e43c1853cb644b6"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 850,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "3d63672a88964901",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 540,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "c79675ed0b3860d9",
+                        "port": 1
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#87A980",
+        "inputLabels": [
+            "RTU packet IN "
+        ],
+        "outputLabels": [
+            "RTU bin packet with CRC OUT",
+            "ERROR Event"
+        ]
+    },
+    {
         "id": "eff4a73a11ad3f9f",
         "type": "group",
         "z": "f85f40305fee5602",
@@ -158,7 +462,8 @@
             "3d704988f522b366",
             "cc7f843cdf5d6825",
             "06b624f825f35a30",
-            "c053997cd49abc10"
+            "c053997cd49abc10",
+            "0a571fa6b0b22def"
         ],
         "x": 34,
         "y": 799,
@@ -334,7 +639,7 @@
             "a53d64f71ca160fe"
         ],
         "x": 34,
-        "y": 1179,
+        "y": 1199,
         "w": 612,
         "h": 122
     },
@@ -530,10 +835,10 @@
             "2681340dcd6e7823",
             "486a5dbea3d75a02"
         ],
-        "x": 514,
-        "y": 539,
-        "w": 872,
-        "h": 242
+        "x": 534,
+        "y": 599,
+        "w": 672,
+        "h": 182
     },
     {
         "id": "41a5f6edc92cb328",
@@ -553,7 +858,7 @@
             "94c8e5c626de76b6"
         ],
         "x": 34,
-        "y": 1039,
+        "y": 1059,
         "w": 612,
         "h": 122
     },
@@ -685,12 +990,13 @@
             "8361f4051e87563a",
             "0fb8096ba6ed2dc0",
             "b0378e5b513ab50c",
-            "e4963a404cfdc9b3"
+            "e4963a404cfdc9b3",
+            "ef88df21dc297c60"
         ],
         "x": 94,
-        "y": 359,
+        "y": 399,
         "w": 1072,
-        "h": 242
+        "h": 282
     },
     {
         "id": "0d53d99ff5bb2375",
@@ -707,11 +1013,12 @@
             "401f71bb2b254823",
             "51e7de832ca1b2b6",
             "c5b70cac176018c7",
-            "54dd10c75cfcdfbe"
+            "54dd10c75cfcdfbe",
+            "114257fefb0a69d8"
         ],
         "x": 114,
         "y": 1039,
-        "w": 832,
+        "w": 822,
         "h": 162
     },
     {
@@ -737,6 +1044,62 @@
         "y": 799,
         "w": 952,
         "h": 202
+    },
+    {
+        "id": "47493a12348dc765",
+        "type": "group",
+        "z": "cb274e359e92b965",
+        "name": "Send  MODBUs RTU Packet",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "412940144c4805e3",
+            "33335be9fabfc923",
+            "51b22efcd9b18702",
+            "a63c84a0f8f1dd1c",
+            "a11d10a1cd0da544",
+            "158584da9d93f75c",
+            "3f16d4cedefc6e76",
+            "853d43b28d1a9c68",
+            "ca488055266e1e70",
+            "d4f677f5d4431f50",
+            "ddb30388d09aa22c",
+            "fded12a6248e68e7",
+            "5efc9198ebea6c82"
+        ],
+        "x": 234,
+        "y": 179,
+        "w": 1142,
+        "h": 222
+    },
+    {
+        "id": "b34d28a2c332e9f6",
+        "type": "group",
+        "z": "8cbec6d1d47d2ee2",
+        "name": "修改設備名稱",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "32ed4f7fd54b2e63",
+            "e443b3dbded61b47",
+            "dc19095f1b40247a",
+            "de269f7f4dfbef2f",
+            "06748dd07a016c00",
+            "346c7148bb80e8e2",
+            "6794e903ccefe246",
+            "c3f0a903856a1019",
+            "398d2dd45cd41bdc",
+            "61c90cc82e8f3d8c",
+            "2946ee7249788a37",
+            "c5327726061bad44",
+            "36b5c2912304c91f"
+        ],
+        "x": 204,
+        "y": 1279,
+        "w": 1062,
+        "h": 282
     },
     {
         "id": "020dd99fe95b0542",
@@ -1267,7 +1630,7 @@
         "link": "https://www.ttu.edu.tw/",
         "icon": "open_in_browser",
         "target": "newtab",
-        "order": 4
+        "order": 5
     },
     {
         "id": "d931e1a8dc110a46",
@@ -1276,7 +1639,7 @@
         "link": "https://www.richlink-tech.com/",
         "icon": "open_in_browser",
         "target": "newtab",
-        "order": 5
+        "order": 6
     },
     {
         "id": "3b4d93d2a52be2e5",
@@ -1285,7 +1648,7 @@
         "link": "http://sanmic.ttu.edu.tw/Teach/IoT/IIoT/IIoT.htm",
         "icon": "open_in_browser",
         "target": "newtab",
-        "order": 10
+        "order": 11
     },
     {
         "id": "787f0e643913694e",
@@ -1294,7 +1657,7 @@
         "link": "http://sanmic.ttu.edu.tw/index.htm",
         "icon": "open_in_browser",
         "target": "newtab",
-        "order": 6
+        "order": 7
     },
     {
         "id": "36ee8f40172a59c7",
@@ -1314,7 +1677,7 @@
         "link": "https://slides.com/sanmic/deck-1//fullscreen",
         "icon": "open_in_browser",
         "target": "newtab",
-        "order": 13
+        "order": 14
     },
     {
         "id": "b63c41058b7ef7a5",
@@ -1323,7 +1686,7 @@
         "link": "https://slides.com/sanmic/deck/fullscreen#/cv",
         "icon": "open_in_browser",
         "target": "newtab",
-        "order": 14
+        "order": 15
     },
     {
         "id": "4f73c318b6171488",
@@ -1332,7 +1695,7 @@
         "link": "https://www.facebook.com/ScienceCoffeeResearchRoom/videos/679387142894765/",
         "icon": "open_in_browser",
         "target": "newtab",
-        "order": 11
+        "order": 12
     },
     {
         "id": "e533954147365362",
@@ -1341,7 +1704,7 @@
         "link": "https://www.facebook.com/100000054054278/videos/1189222341981287/",
         "icon": "open_in_browser",
         "target": "newtab",
-        "order": 9
+        "order": 10
     },
     {
         "id": "1cdb2e76a7214692",
@@ -1350,7 +1713,7 @@
         "link": "https://youtu.be/uw-2Ex-6UaQ",
         "icon": "open_in_browser",
         "target": "newtab",
-        "order": 12
+        "order": 13
     },
     {
         "id": "251693cd2cf32d74",
@@ -1359,7 +1722,7 @@
         "link": "https://www.youtube.com/watch?v=ASBM4egDnGM",
         "icon": "open_in_browser",
         "target": "newtab",
-        "order": 7
+        "order": 8
     },
     {
         "id": "dae01a06b29f170e",
@@ -1368,7 +1731,7 @@
         "link": "https://www.youtube.com/watch?v=rqYDWtqUbGA",
         "icon": "open_in_browser",
         "target": "newtab",
-        "order": 8
+        "order": 9
     },
     {
         "id": "1c3a4a841a6dae33",
@@ -1396,57 +1759,35 @@
         "height": 1
     },
     {
-        "id": "89bdf927ec16d0dd",
+        "id": "17173f7c1a5033d3",
         "type": "ui_group",
-        "name": "修改主機設定",
-        "tab": "d50283c991ec49e9",
-        "order": 6,
+        "name": "Response",
+        "tab": "9554a493ec458fae",
+        "order": 4,
         "disp": true,
-        "width": "3",
+        "width": 26,
         "collapse": false,
         "className": ""
     },
     {
-        "id": "5455dab8220aebed",
+        "id": "a6c6937c0c826ac4",
         "type": "ui_group",
-        "name": "COLOR  BULB",
-        "tab": "d0b58772ca9126ea",
-        "order": 5,
-        "disp": true,
-        "width": "4",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "648dc09b3836aec9",
-        "type": "ui_group",
-        "name": "控制",
-        "tab": "d0b58772ca9126ea",
-        "order": 3,
-        "disp": true,
-        "width": "4",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "c49c01a4cfc11e6a",
-        "type": "ui_group",
-        "name": "電錶",
-        "tab": "d0b58772ca9126ea",
+        "name": "Option",
+        "tab": "9554a493ec458fae",
         "order": 2,
         "disp": true,
-        "width": "6",
+        "width": 8,
         "collapse": false,
         "className": ""
     },
     {
-        "id": "7bcbd43a6a042924",
+        "id": "bb48ce9b02d1c374",
         "type": "ui_group",
-        "name": "修改主機設定",
-        "tab": "d50283c991ec49e9",
-        "order": 6,
+        "name": "Audio Recognition",
+        "tab": "9554a493ec458fae",
+        "order": 3,
         "disp": true,
-        "width": "3",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -1481,35 +1822,33 @@
         "height": 1
     },
     {
-        "id": "17173f7c1a5033d3",
-        "type": "ui_group",
-        "name": "Response",
-        "tab": "9554a493ec458fae",
+        "id": "ec6f836f70873904",
+        "type": "ui_tab",
+        "name": "紅外遙控  RTU",
+        "icon": "dashboard",
         "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "8f53c092566fe14a",
+        "type": "ui_group",
+        "name": "學習",
+        "tab": "ec6f836f70873904",
+        "order": 1,
         "disp": true,
-        "width": 26,
+        "width": "6",
         "collapse": false,
         "className": ""
     },
     {
-        "id": "a6c6937c0c826ac4",
+        "id": "3316ae35256263da",
         "type": "ui_group",
-        "name": "Option",
-        "tab": "9554a493ec458fae",
+        "name": "控制",
+        "tab": "ec6f836f70873904",
         "order": 2,
         "disp": true,
-        "width": 8,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "bb48ce9b02d1c374",
-        "type": "ui_group",
-        "name": "Audio Recognition",
-        "tab": "9554a493ec458fae",
-        "order": 3,
-        "disp": true,
-        "width": 10,
+        "width": "6",
         "collapse": false,
         "className": ""
     },
@@ -2327,6 +2666,397 @@
         ]
     },
     {
+        "id": "9820d2b747be8638",
+        "type": "function",
+        "z": "914e2eba85ee9a8d",
+        "name": "MDTG for Epy",
+        "func": "var mdtg_uid= msg.payload[1]\nvar datahex = msg.payload[3]\nvar uid = env.get(\"uid\")\n\nvar header = datahex.slice(0,6)\nvar from_mac = datahex.slice(6,10)\nvar to_uid = '0x' + datahex.slice(10, 14)\nvar cmd_length = parseInt(datahex.slice (14,16),16)\nvar type = datahex.slice(16, 20)\nvar cmd = datahex.slice(-2*(cmd_length-2))\n\n// node.warn(\"header=\" + header)\n// node.warn('from_mac=' + from_mac)\n// node.warn(\"to_uid=\" + to_uid)\n// node.warn('cmd_leng =' + cmd_length)\n// node.warn('cmd=' + cmd);\n// node.warn('type=' + type);\n\nif ((mdtg_uid == uid) || (uid == 0x0000) &&\n    (header == '87F000')){\n        return {to_uid , type , cmd }\n    }",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 120,
+        "wires": [
+            [
+                "f132dcd90a78d2ed"
+            ]
+        ]
+    },
+    {
+        "id": "f132dcd90a78d2ed",
+        "type": "switch",
+        "z": "914e2eba85ee9a8d",
+        "name": "",
+        "property": "type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0100",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "0200",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 490,
+        "y": 120,
+        "wires": [
+            [
+                "27ee1a6d20bd0a50"
+            ],
+            [
+                "1899e64843b1669a"
+            ],
+            []
+        ],
+        "outputLabels": [
+            "Color",
+            "Plug",
+            "TEMP"
+        ]
+    },
+    {
+        "id": "27ee1a6d20bd0a50",
+        "type": "change",
+        "z": "914e2eba85ee9a8d",
+        "name": "change msg to COLOR CTRL",
+        "rules": [
+            {
+                "t": "move",
+                "p": "to_uid",
+                "pt": "msg",
+                "to": "uid",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "COLOR",
+                "tot": "str"
+            },
+            {
+                "t": "move",
+                "p": "cmd",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "58fb712575476ffb",
+        "type": "change",
+        "z": "914e2eba85ee9a8d",
+        "name": "change msg to PLUGCTRL",
+        "rules": [
+            {
+                "t": "move",
+                "p": "to_uid",
+                "pt": "msg",
+                "to": "uid",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "PLUG",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1899e64843b1669a",
+        "type": "function",
+        "z": "914e2eba85ee9a8d",
+        "name": "change on/off",
+        "func": "if (msg.cmd == \"00\")\n    msg.payload = false\nelse if (msg.cmd == \"01\")\n    msg.payload = true\nelse \n    return\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 120,
+        "wires": [
+            [
+                "58fb712575476ffb"
+            ]
+        ]
+    },
+    {
+        "id": "7f82b9a9d1ec7c02",
+        "type": "function",
+        "z": "03d6d793edc7201f",
+        "name": "Check_MDTG",
+        "func": "var mdtg_uid= msg.payload[1]\nvar datahex = msg.payload[3]\nvar uid = env.get(\"uid\")\n\n// 8276010000\n\n//8276 02   01 04   0C   0107  022B  0003  0000 0000 0233 4B4E\n//                len   Temp  humi  pm2.5  XX   XX   cO2  CRC     \n\nvar HEADER = '8276'\nvar SET_CMD = '01'\nvar GET_CMD = '00'\nvar RTU_CMD = '02'\nvar SENSOR_CMD = '03'\nvar DataLength = '01'\nvar OK = '80'\nvar ERROR = 'FE'\n\nif (mdtg_uid == uid) {\n    \n    var header = datahex.slice(0, 4)\n    var cmd_type = datahex.slice(4, 6)\n    var status = datahex.slice(6,8)\n    if ((header == HEADER) && (cmd_type == GET_CMD)&& (status == OK) ){\n        var address = datahex.slice(8, 10)\n        if (datahex.slice(10,12) == '01')\n            return { payload: {type:'DI',state :true} }\n        else if (datahex.slice(10, 12) == '00')\n            return { payload: { type: 'DI', state: false }}\n    }\n    if ((header == HEADER) && (cmd_type == SET_CMD) ){\n        var address = datahex.slice(8, 10)\n        if ((address == '00') && (status == OK))\n            return { payload: { type: 'DO', state: true }}\n        else if ((address == '00') && (status == ERROR))\n            return {  payload: { type: 'DO', state: false }}\n        else if ((address == '80') && (status == OK))\n            return { payload: { type: 'SET', state: true } }\n    }\n    if ((header == HEADER) && (cmd_type == RTU_CMD)){\n        var data =  datahex.slice(6)\n        return { payload: { type: 'RTU', data} }\n    }\n    if ((header == HEADER) && (cmd_type == SENSOR_CMD)) {\n        var data = datahex.slice(8)\n        return { payload: { type: 'SENSOR', data } }\n    }\n    return { payload: 'Error' }\n    }",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 140,
+        "wires": [
+            [
+                "5ba7d01a1624c6ab",
+                "4a33f0a3bc0911d9"
+            ]
+        ]
+    },
+    {
+        "id": "5ba7d01a1624c6ab",
+        "type": "function",
+        "z": "03d6d793edc7201f",
+        "name": "ePySensor",
+        "func": "if (msg.payload.type == \"SENSOR\"){\n    var datahex = msg.payload.data\n    var temper_raw = (parseInt(datahex.slice(0, 2), 16) * 256) + parseInt(datahex.slice(2, 4), 16);\n    var humidity_raw = parseInt(datahex.slice(4, 6), 16) * 256 + parseInt(datahex.slice(6, 8), 16);\n\n    return {\n        payload: {temper: temper_raw / 10, humidity: humidity_raw / 10},\n        uid : env.get(\"uid\"),\n        topic :\"SENSOR\"\n            \n        }\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a33f0a3bc0911d9",
+        "type": "function",
+        "z": "03d6d793edc7201f",
+        "name": "DI",
+        "func": "if (msg.payload.type == \"DI\"){\n    var state = msg.payload.state\n    return ({ payload: state,\n              uid:env.get(\"uid\") })\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3ef81333fc7ee2f8",
+        "type": "function",
+        "z": "2e6531b05546862f",
+        "name": "Check_MDTG",
+        "func": "var mdtg_uid= msg.payload[1]\nvar datahex = msg.payload[3]\nvar uid = env.get(\"uid\")\n\n// 8276010000\n\n//8276 02   01 04   0C   0107  022B  0003  0000 0000 0233 4B4E\n//                len   Temp  humi  pm2.5  XX   XX   cO2  CRC     \n\nvar HEADER = '8276'\nvar SET_CMD = '01'\nvar GET_CMD = '00'\nvar RTU_CMD = '02'\nvar SENSOR_CMD = '03'\nvar DataLength = '01'\nvar OK = '80'\nvar ERROR = 'FE'\n\nif (mdtg_uid == uid) {\n    \n    var header = datahex.slice(0, 4)\n    var cmd_type = datahex.slice(4, 6)\n    var status = datahex.slice(6,8)\n    if ((header == HEADER) && (cmd_type == GET_CMD)&& (status == OK) ){\n        var address = datahex.slice(8, 10)\n        if (datahex.slice(10,12) == '01')\n            return { payload: {type:'DI',state :true} }\n        else if (datahex.slice(10, 12) == '00')\n            return { payload: { type: 'DI', state: false }}\n    }\n    if ((header == HEADER) && (cmd_type == SET_CMD) ){\n        var address = datahex.slice(8, 10)\n        if ((address == '00') && (status == OK))\n            return { payload: { type: 'DO', state: true }}\n        else if ((address == '00') && (status == ERROR))\n            return {  payload: { type: 'DO', state: false }}\n        else if ((address == '80') && (status == OK))\n            return { payload: { type: 'SET', state: true } }\n    }\n    if ((header == HEADER) && (cmd_type == RTU_CMD)){\n        var data =  datahex.slice(6)\n        return { payload: { type: 'RTU', data} }\n    }\n    if ((header == HEADER) && (cmd_type == SENSOR_CMD)) {\n        var data = datahex.slice(8)\n        return { payload: { type: 'SENSOR', data } }\n    }\n    return { payload: 'Error' }\n    }",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 120,
+        "wires": [
+            [
+                "d5bb6167aee67909",
+                "7e1062a3643b1825"
+            ]
+        ]
+    },
+    {
+        "id": "d5bb6167aee67909",
+        "type": "function",
+        "z": "2e6531b05546862f",
+        "name": "RTU 電表",
+        "func": "if (msg.payload.type == \"RTU\"){\n    var datahex = msg.payload.data\n    var voltage_r = (parseInt(datahex.slice(6, 8), 16) * 256) + parseInt(datahex.slice(8, 10), 16);\n    var current_r = parseInt(datahex.slice(10, 12), 16) * 256 + parseInt(datahex.slice(12, 14), 16);\n    var power_r = parseInt(datahex.slice(18, 20), 16) * 256 + parseInt(datahex.slice(20, 22), 16);\n\n    if ((voltage_r == null) || (current_r == null) || (power_r == null))\n        return \n    if ( (voltage_r / 10) > 500 || (current_r /1000 ) > 5 )\n        return\n    return { payload: {voltage: voltage_r / 10,\n                        current: current_r / 1000, \n                        power: power_r / 10 } ,\n                uid : env.get(\"uid\"),\n                topic :\"PowerMeter-IO\"\n            \n            }\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7e1062a3643b1825",
+        "type": "function",
+        "z": "2e6531b05546862f",
+        "name": "DI",
+        "func": "if (msg.payload.type == \"DI\"){\n    var state = msg.payload.state\n    return ({ payload: state,\n              uid:env.get(\"uid\") })\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "248693e7f1f3774f",
+        "type": "function",
+        "z": "7aad34d962cf9ce2",
+        "name": "Check_MDTG",
+        "func": "var mdtg_uid= msg.payload[1]\nvar datahex = msg.payload[3]\nvar uid = env.get(\"uid\")\n\n// 8276010000\n\n//8276 02   01 04   0C   0107  022B  0003  0000 0000 0233 4B4E\n//                len   Temp  humi  pm2.5  XX   XX   cO2  CRC     \n\nvar HEADER = '8276'\nvar SET_CMD = '01'\nvar GET_CMD = '00'\nvar RTU_CMD = '02'\nvar DataLength = '01'\nvar OK = '80'\nvar ERROR = 'FE'\n\nif (mdtg_uid == uid) {\n    \n    var header = datahex.slice(0, 4)\n    var cmd_type = datahex.slice(4, 6)\n    var status = datahex.slice(6,8)\n    if ((header == HEADER) && (cmd_type == GET_CMD)&& (status == OK) ){\n        var address = datahex.slice(8, 10)\n        if (datahex.slice(10,12) == '01')\n            return { payload: {type:'DI',state :true} }\n        else if (datahex.slice(10, 12) == '00')\n            return { payload: { type: 'DI', state: false }}\n    }\n    if ((header == HEADER) && (cmd_type == SET_CMD) ){\n        var address = datahex.slice(8, 10)\n        if ((address == '00') && (status == OK))\n            return { payload: { type: 'DO', state: true }}\n        else if ((address == '00') && (status == ERROR))\n            return {  payload: { type: 'DO', state: false }}\n        else if ((address == '80') && (status == OK))\n            return { payload: { type: 'SET', state: true } }\n    }\n    if ((header == HEADER) && (cmd_type == RTU_CMD)){\n        var data =  datahex.slice(6)\n        return { payload: { type: 'RTU', data} }\n    }\n    return { payload: 'Error' }\n    }",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 140,
+        "wires": [
+            [
+                "aa3e8f4a3830fdbf",
+                "cd76647f60a37629"
+            ]
+        ]
+    },
+    {
+        "id": "aa3e8f4a3830fdbf",
+        "type": "function",
+        "z": "7aad34d962cf9ce2",
+        "name": "DI",
+        "func": "if (msg.payload.type == \"DI\"){\n    var state = msg.payload.state\n    return ({ payload: state, id: env.get(\"uid\") })\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cd76647f60a37629",
+        "type": "function",
+        "z": "7aad34d962cf9ce2",
+        "name": "RTU (LT-CG-S)",
+        "func": "if (msg.payload.type == \"RTU\"){\n    var datahex = msg.payload.data\n    var temper_raw = (parseInt(datahex.slice(6, 8), 16) * 256) + parseInt(datahex.slice(8, 10), 16);\n    var humidity_raw = parseInt(datahex.slice(10, 12), 16) * 256 + parseInt(datahex.slice(12, 14), 16);\n    var pm25 = parseInt(datahex.slice(14, 16), 16) * 256 + parseInt(datahex.slice(16, 18), 16);\n    var co2 = parseInt(datahex.slice(26, 28), 16) * 256 + parseInt(datahex.slice(28, 30), 16);\n    if ( (temper_raw == null) || (humidity_raw == null) || (pm25 == null) || (co2 ==null))\n        return \n    return { payload: { temper: temper_raw / 10, \n                        humidity: humidity_raw / 10 ,\n                        pm25 , co2 },\n             uid: env.get(\"uid\"),\n             topic : \"AirBox-IO\"\n            };\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7e43c1853cb644b6",
+        "type": "function",
+        "z": "c2e250b5f7368324",
+        "name": "check format",
+        "func": "if (msg.payload.id.length != 4)\n    return {payload:\"id (0x00)字串長度須為4\", topic : \"ID Error\"}\nif (msg.payload.id.substr(0,2) != '0x')\n    return {payload:\"id (0x01)開頭須為0x\", topic : \"ID Error\"}\n\nif (msg.payload.cmd.length != 4)\n    return { payload: \"cmd (0x00)字串長度須為4\", topic: \"CMD Error\" }\nif (msg.payload.cmd.substr(0, 2) != '0x')\n    return { payload: \"cmd (0x01)開頭須為0x\", topic: \"CMD Error\" }\n\nif (msg.payload.start_addr.length != 6)\n    return { payload: \"start addr (0x0000)字串長度須為6\", topic: \"Start Address Error\" }\nif (msg.payload.start_addr.substr(0, 2) != '0x')\n    return { payload: \"start addr (0x0000)字串長度須為6\", topic: \"Start Address Error\" }\nif (msg.payload.length.length >=1 && msg.payload.length.length <=10) \n    return { payload: \"數據長度10進位 1~10\", topic: \"data length Error\" }\n\nreturn {payload : msg.payload , topic : \"checkOK\"};\n\n// ",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 210,
+        "y": 80,
+        "wires": [
+            [
+                "c79675ed0b3860d9"
+            ]
+        ]
+    },
+    {
+        "id": "c79675ed0b3860d9",
+        "type": "switch",
+        "z": "c2e250b5f7368324",
+        "name": "FormatError",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "checkOK",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 370,
+        "y": 80,
+        "wires": [
+            [
+                "3d63672a88964901"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "3d63672a88964901",
+        "type": "function",
+        "z": "c2e250b5f7368324",
+        "name": "計算 CRC並重組包",
+        "func": "function crc16(buffer) {\n    var crc = 0xFFFF;\n    var odd;\n\n    for (var i = 0; i < buffer.length; i++) {\n        crc ^= buffer[i];\n\n        for (var j = 0; j < 8; j++) {\n            odd = crc & 0x0001;\n            crc >>= 1;\n            if (odd) {\n                crc ^= 0xA001;\n            }\n        }\n    }\n\n    return crc;\n}\n\nfunction convertUint8_to_hexStr(uint8_array) {\n    var hex_str = \"\";\n    uint8_array.forEach(function (element) {\n        hex_str += element.toString(16).padStart(2, '0');\n    });\n    return hex_str;\n}\n\nvar buffer = msg.payload;\nvar Rs485Data = new Uint8Array(8);\nRs485Data[0] = parseInt(msg.payload.id.substr(2, 2), 16);\nRs485Data[1] = parseInt(msg.payload.cmd.substr(2, 2), 16);\nRs485Data[2] = parseInt(msg.payload.start_addr.substr(2, 4), 16) >> 8; // High byte\nRs485Data[3] = parseInt(msg.payload.start_addr.substr(2, 4), 16) & 0xFF; // Low byte\nRs485Data[4] = parseInt(msg.payload.length / 255);\nRs485Data[5] = msg.payload.length % 255;\n\nvar CRC = crc16(Rs485Data.slice(0, 6));\nRs485Data[6] = CRC & 0xFF; // Low byte\nRs485Data[7] = (CRC >> 8) & 0xFF; // High byte\n\nvar str = convertUint8_to_hexStr(Rs485Data).toUpperCase();\nreturn { payload:str , crc: str.substr(11,4)};\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "9d6848c3cf5e4b28",
         "type": "link out",
         "z": "298c337f544e92d5",
@@ -2357,7 +3087,7 @@
         "topic": "",
         "payload": "AT+MDTS 0x0111 0 0 0 0x010300000002C40B",
         "payloadType": "str",
-        "x": 720,
+        "x": 740,
         "y": 740,
         "wires": [
             [
@@ -2427,8 +3157,8 @@
         "g": "1e4bb4113e263703",
         "name": "Sanmic Note",
         "info": "SOP:\nStep 01: Get ID\nStep 02:\nStep 03:\nStep 04:\nStep 05: Verify the result",
-        "x": 1290,
-        "y": 580,
+        "x": 1110,
+        "y": 660,
         "wires": []
     },
     {
@@ -2550,7 +3280,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1300,
+        "x": 1320,
         "y": 100,
         "wires": []
     },
@@ -2617,10 +3347,12 @@
         "name": "RL62M MESH IN",
         "links": [
             "cccc0ef474ab1a04",
-            "df8e445e85cee804"
+            "df8e445e85cee804",
+            "412940144c4805e3",
+            "7e19022d5f63866a"
         ],
-        "x": 765,
-        "y": 100,
+        "x": 755,
+        "y": 120,
         "wires": [
             [
                 "a1b52ca030f104ee"
@@ -2778,7 +3510,9 @@
         "z": "298c337f544e92d5",
         "name": "To MDTG ( MESH 裝置回傳)",
         "mode": "link",
-        "links": [],
+        "links": [
+            "6b4fdb3e97232872"
+        ],
         "x": 1285,
         "y": 140,
         "wires": []
@@ -2818,7 +3552,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 930,
-        "y": 440,
+        "y": 460,
         "wires": [
             [
                 "63389520e2e51e67"
@@ -2838,7 +3572,7 @@
         "finalize": "",
         "libs": [],
         "x": 1120,
-        "y": 440,
+        "y": 460,
         "wires": [
             []
         ]
@@ -2896,7 +3630,7 @@
         "name": "",
         "serial": "7a5d15765d1785d0",
         "x": 1330,
-        "y": 400,
+        "y": 360,
         "wires": []
     },
     {
@@ -2939,7 +3673,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 700,
+        "x": 480,
         "y": 140,
         "wires": []
     },
@@ -2957,7 +3691,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1330,
-        "y": 360,
+        "y": 420,
         "wires": []
     },
     {
@@ -3423,6 +4157,16 @@
         "icon": "node-red/alert.svg"
     },
     {
+        "id": "eb83584e47b518d4",
+        "type": "comment",
+        "z": "298c337f544e92d5",
+        "name": "system init set proving geting",
+        "info": "init proving state to false",
+        "x": 1040,
+        "y": 420,
+        "wires": []
+    },
+    {
         "id": "cbc8c7dde36554ed",
         "type": "ui_gauge",
         "z": "f85f40305fee5602",
@@ -3606,12 +4350,14 @@
         "z": "f85f40305fee5602",
         "g": "eff4a73a11ad3f9f",
         "name": "WebGUI",
-        "links": [],
-        "x": 175,
+        "links": [
+            "6f4115b13f7c87ce"
+        ],
+        "x": 115,
         "y": 960,
         "wires": [
             [
-                "c053997cd49abc10"
+                "0a571fa6b0b22def"
             ]
         ]
     },
@@ -4292,7 +5038,7 @@
         "name": "link out 6",
         "mode": "link",
         "links": [],
-        "x": 555,
+        "x": 475,
         "y": 880,
         "wires": []
     },
@@ -4309,7 +5055,7 @@
         "finalize": "",
         "libs": [],
         "x": 160,
-        "y": 1340,
+        "y": 1360,
         "wires": [
             []
         ]
@@ -4455,7 +5201,7 @@
         "finalize": "",
         "libs": [],
         "x": 150,
-        "y": 1380,
+        "y": 1400,
         "wires": [
             []
         ]
@@ -4563,7 +5309,7 @@
         "repair": false,
         "outputs": 2,
         "x": 120,
-        "y": 1240,
+        "y": 1260,
         "wires": [
             [
                 "f05b731643d2eb9d"
@@ -4590,7 +5336,7 @@
         "topic": "Line 已通知",
         "name": "Line 已通知",
         "x": 550,
-        "y": 1240,
+        "y": 1260,
         "wires": []
     },
     {
@@ -5391,7 +6137,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 140,
-        "y": 1080,
+        "y": 1100,
         "wires": [
             [
                 "db3e358ca3c41df6"
@@ -5412,7 +6158,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 500,
-        "y": 1080,
+        "y": 1100,
         "wires": []
     },
     {
@@ -5496,7 +6242,7 @@
         "name": "Sanmic Note",
         "info": "目前只有在本機使用127.0.0.1才能看到",
         "x": 130,
-        "y": 1120,
+        "y": 1140,
         "wires": []
     },
     {
@@ -5587,7 +6333,7 @@
         "silent": false,
         "creds": "1c3a4a841a6dae33",
         "x": 330,
-        "y": 1220,
+        "y": 1240,
         "wires": [
             [
                 "a53d64f71ca160fe"
@@ -5610,7 +6356,7 @@
         "silent": false,
         "creds": "1c3a4a841a6dae33",
         "x": 330,
-        "y": 1260,
+        "y": 1280,
         "wires": [
             [
                 "a53d64f71ca160fe"
@@ -5634,7 +6380,7 @@
         "mirror": true,
         "format": "jpeg",
         "x": 300,
-        "y": 1080,
+        "y": 1100,
         "wires": [
             [
                 "f41c46f15fb7b601"
@@ -5669,7 +6415,7 @@
         "pass": false,
         "outputs": 0,
         "x": 520,
-        "y": 1120,
+        "y": 1140,
         "wires": []
     },
     {
@@ -6455,7 +7201,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 300,
+        "x": 360,
         "y": 960,
         "wires": [
             [
@@ -6620,6 +7366,588 @@
         ]
     },
     {
+        "id": "0a571fa6b0b22def",
+        "type": "switch",
+        "z": "f85f40305fee5602",
+        "g": "eff4a73a11ad3f9f",
+        "name": "switch uid",
+        "property": "uid",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0x0111",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "0x0112",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 220,
+        "y": 960,
+        "wires": [
+            [
+                "c053997cd49abc10"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "412940144c4805e3",
+        "type": "link out",
+        "z": "cb274e359e92b965",
+        "g": "47493a12348dc765",
+        "name": "To RL62M02 MESH",
+        "mode": "link",
+        "links": [
+            "d9717fc33326853d"
+        ],
+        "x": 1335,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "33335be9fabfc923",
+        "type": "change",
+        "z": "cb274e359e92b965",
+        "g": "47493a12348dc765",
+        "name": "Set RTU uid 0x0111",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "SMARTBOX",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "uid",
+                "pt": "msg",
+                "to": "0x0111",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "channel",
+                "pt": "msg",
+                "to": "RTU",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1180,
+        "y": 300,
+        "wires": [
+            [
+                "412940144c4805e3"
+            ]
+        ]
+    },
+    {
+        "id": "6b4fdb3e97232872",
+        "type": "link in",
+        "z": "cb274e359e92b965",
+        "name": "MDTG Check",
+        "links": [
+            "2708002fe7df1c7f"
+        ],
+        "x": 525,
+        "y": 680,
+        "wires": [
+            [
+                "df8a50a79b3aba2d",
+                "58d90bb39cddf1ef",
+                "e907357d7fa5e6a5"
+            ]
+        ]
+    },
+    {
+        "id": "df8a50a79b3aba2d",
+        "type": "subflow:7aad34d962cf9ce2",
+        "z": "cb274e359e92b965",
+        "name": "",
+        "env": [
+            {
+                "name": "uid",
+                "value": "0x0111",
+                "type": "str"
+            }
+        ],
+        "x": 780,
+        "y": 680,
+        "wires": [
+            [],
+            [
+                "3107574c45d6bd96",
+                "6f4115b13f7c87ce",
+                "37359c3853dfacf8"
+            ]
+        ],
+        "inputLabels": [
+            "MDTG Msg"
+        ],
+        "outputLabels": [
+            "Digital IN Status",
+            "溫控器RTUData"
+        ]
+    },
+    {
+        "id": "3107574c45d6bd96",
+        "type": "debug",
+        "z": "cb274e359e92b965",
+        "name": "debug 60",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "51b22efcd9b18702",
+        "type": "subflow:c2e250b5f7368324",
+        "z": "cb274e359e92b965",
+        "g": "47493a12348dc765",
+        "name": "",
+        "x": 950,
+        "y": 300,
+        "wires": [
+            [
+                "33335be9fabfc923"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a63c84a0f8f1dd1c",
+        "type": "inject",
+        "z": "cb274e359e92b965",
+        "g": "47493a12348dc765",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 330,
+        "y": 300,
+        "wires": [
+            [
+                "d4f677f5d4431f50"
+            ]
+        ]
+    },
+    {
+        "id": "a11d10a1cd0da544",
+        "type": "change",
+        "z": "cb274e359e92b965",
+        "g": "47493a12348dc765",
+        "name": "Set RTU  溫控器 GetCMD",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"id\":\"0x01\",\"cmd\":\"0x04\",\"start_addr\":\"0x0000\",\"length\":6}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 300,
+        "wires": [
+            [
+                "51b22efcd9b18702"
+            ]
+        ]
+    },
+    {
+        "id": "6f4115b13f7c87ce",
+        "type": "link out",
+        "z": "cb274e359e92b965",
+        "name": "To Deshboard UI",
+        "mode": "link",
+        "links": [
+            "bea7f99d065ec6e8"
+        ],
+        "x": 1025,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "58d90bb39cddf1ef",
+        "type": "subflow:2e6531b05546862f",
+        "z": "cb274e359e92b965",
+        "name": "",
+        "env": [
+            {
+                "name": "uid",
+                "value": "0x0101",
+                "type": "str"
+            }
+        ],
+        "x": 770,
+        "y": 720,
+        "wires": [
+            [],
+            [
+                "6f4115b13f7c87ce",
+                "2c3b8a8bdf0b0268"
+            ]
+        ]
+    },
+    {
+        "id": "158584da9d93f75c",
+        "type": "subflow:c2e250b5f7368324",
+        "z": "cb274e359e92b965",
+        "g": "47493a12348dc765",
+        "name": "",
+        "x": 950,
+        "y": 360,
+        "wires": [
+            [
+                "ca488055266e1e70"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "3f16d4cedefc6e76",
+        "type": "inject",
+        "z": "cb274e359e92b965",
+        "g": "47493a12348dc765",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 330,
+        "y": 360,
+        "wires": [
+            [
+                "ddb30388d09aa22c"
+            ]
+        ]
+    },
+    {
+        "id": "853d43b28d1a9c68",
+        "type": "change",
+        "z": "cb274e359e92b965",
+        "g": "47493a12348dc765",
+        "name": "Set RTU 電表 GetCMD",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"id\":\"0x02\",\"cmd\":\"0x03\",\"start_addr\":\"0x000E\",\"length\":4}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 360,
+        "wires": [
+            [
+                "158584da9d93f75c"
+            ]
+        ]
+    },
+    {
+        "id": "ca488055266e1e70",
+        "type": "change",
+        "z": "cb274e359e92b965",
+        "g": "47493a12348dc765",
+        "name": "Set RTU uid",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "SMARTBOX",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "uid",
+                "pt": "msg",
+                "to": "0x0101",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "channel",
+                "pt": "msg",
+                "to": "RTU",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1150,
+        "y": 360,
+        "wires": [
+            [
+                "412940144c4805e3"
+            ]
+        ]
+    },
+    {
+        "id": "4bb00401aa1b0592",
+        "type": "function",
+        "z": "cb274e359e92b965",
+        "name": "Auto Control",
+        "func": "var co2 = msg.payload.co2\nvar pm25 = msg.payload.pm25 \n\nif ( (pm25 >35 ) || (co2 >1000 )){\n    //DIO ON\n    return {payload :true}\n}\nelse if ((pm25 < 35) || (co2 < 800))\n    //DIO OFF\n    return { payload: false }\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 480,
+        "wires": [
+            [
+                "a18db2473c0a3588"
+            ]
+        ]
+    },
+    {
+        "id": "bda9592540e9effe",
+        "type": "link out",
+        "z": "cb274e359e92b965",
+        "name": "To RL62M02 MESH CMD",
+        "mode": "link",
+        "links": [],
+        "x": 1355,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "a18db2473c0a3588",
+        "type": "change",
+        "z": "cb274e359e92b965",
+        "name": "Set SMART DO uid",
+        "rules": [
+            {
+                "t": "set",
+                "p": "uid",
+                "pt": "msg",
+                "to": "0x0102",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "channel",
+                "pt": "msg",
+                "to": "DO",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "SMARTBOX",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1230,
+        "y": 480,
+        "wires": [
+            [
+                "bda9592540e9effe"
+            ]
+        ]
+    },
+    {
+        "id": "7be0d6f8a700c6e7",
+        "type": "inject",
+        "z": "cb274e359e92b965",
+        "name": "co2/pm25 test",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"pm25\":67,\"co2\":987}",
+        "payloadType": "json",
+        "x": 850,
+        "y": 480,
+        "wires": [
+            [
+                "4bb00401aa1b0592"
+            ]
+        ]
+    },
+    {
+        "id": "e907357d7fa5e6a5",
+        "type": "debug",
+        "z": "cb274e359e92b965",
+        "name": "debug 65",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "d4f677f5d4431f50",
+        "type": "function",
+        "z": "cb274e359e92b965",
+        "g": "47493a12348dc765",
+        "name": "Proving Gating",
+        "func": "var prove_ing = global.get(\"proving\") || false;\nif (prove_ing == false){\n    node.status({ fill: \"green\", shape: \"ring\", text: \"gate on\" });\n    return msg;\n}\nnode.status({ fill: \"red\", shape: \"ring\", text: \"gate off\" });",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 300,
+        "wires": [
+            [
+                "a11d10a1cd0da544"
+            ]
+        ]
+    },
+    {
+        "id": "ddb30388d09aa22c",
+        "type": "function",
+        "z": "cb274e359e92b965",
+        "g": "47493a12348dc765",
+        "name": "Proving Gating",
+        "func": "var prove_ing = global.get(\"proving\") || false;\nif (prove_ing == false){\n    node.status({ fill: \"green\", shape: \"ring\", text: \"gate on\" });\n    return msg;\n}\nnode.status({ fill: \"red\", shape: \"ring\", text: \"gate off\" });",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 360,
+        "wires": [
+            [
+                "853d43b28d1a9c68"
+            ]
+        ]
+    },
+    {
+        "id": "2c3b8a8bdf0b0268",
+        "type": "debug",
+        "z": "cb274e359e92b965",
+        "name": "debug 73",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "fded12a6248e68e7",
+        "type": "comment",
+        "z": "cb274e359e92b965",
+        "g": "47493a12348dc765",
+        "name": "SetRTU GetCMD",
+        "info": "Set RTU Get CMD\n{\n    id : RTU DEVICE ID 0x01\n    cmd : RTU command 0x03\n    start_addr: get start address 0x0000\n    lenght : get data length 4\n}",
+        "x": 480,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "5efc9198ebea6c82",
+        "type": "comment",
+        "z": "cb274e359e92b965",
+        "g": "47493a12348dc765",
+        "name": "How to set SmartBox RTU",
+        "info": "SetRTU Get CMD\n   MODBUS get data CMD\nSetRTU uid\n\nSet SmartBox Recv uid\nSet switch webUI uid for show 溫溼度",
+        "x": 770,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "37359c3853dfacf8",
+        "type": "link out",
+        "z": "cb274e359e92b965",
+        "name": "To CSV Write",
+        "mode": "link",
+        "links": [
+            "0fb8096ba6ed2dc0"
+        ],
+        "x": 1025,
+        "y": 580,
+        "wires": []
+    },
+    {
         "id": "a9c1abc2ec0cbb9d",
         "type": "json",
         "z": "fe798ccc3bac8377",
@@ -6662,7 +7990,8 @@
         "name": "save file",
         "links": [
             "efa54db14fb13f2f",
-            "f94b99bfec9035ba"
+            "f94b99bfec9035ba",
+            "c3f0a903856a1019"
         ],
         "x": 175,
         "y": 120,
@@ -6886,7 +8215,7 @@
         "finalize": "",
         "libs": [],
         "x": 440,
-        "y": 420,
+        "y": 500,
         "wires": [
             [
                 "85895d137d570d70"
@@ -6917,7 +8246,7 @@
         "payload": "{\"temper\":23.5,\"humidity\":80,\"co2\":465,\"pm25\":4}",
         "payloadType": "json",
         "x": 220,
-        "y": 420,
+        "y": 500,
         "wires": [
             [
                 "82a97b9d8c0f5981"
@@ -6937,7 +8266,7 @@
         "overwriteFile": "true",
         "encoding": "utf8",
         "x": 1000,
-        "y": 440,
+        "y": 520,
         "wires": [
             []
         ]
@@ -6959,7 +8288,7 @@
         "include_empty_strings": "",
         "include_null_values": "",
         "x": 800,
-        "y": 440,
+        "y": 520,
         "wires": [
             [
                 "deef6a95e127917c"
@@ -6980,7 +8309,7 @@
         "write": true,
         "throwerror": false,
         "x": 630,
-        "y": 420,
+        "y": 500,
         "wires": [
             [
                 "9a6299e6ae23d741"
@@ -7007,7 +8336,7 @@
         "include_empty_strings": "",
         "include_null_values": "",
         "x": 810,
-        "y": 400,
+        "y": 480,
         "wires": [
             [
                 "4ba7de3c18cec7f7"
@@ -7027,7 +8356,7 @@
         "overwriteFile": "false",
         "encoding": "utf8",
         "x": 1000,
-        "y": 400,
+        "y": 480,
         "wires": [
             []
         ]
@@ -7046,7 +8375,7 @@
         "finalize": "",
         "libs": [],
         "x": 460,
-        "y": 540,
+        "y": 620,
         "wires": [
             [
                 "20594bfde7d78dda"
@@ -7066,7 +8395,7 @@
         "overwriteFile": "true",
         "encoding": "utf8",
         "x": 1060,
-        "y": 560,
+        "y": 640,
         "wires": [
             []
         ]
@@ -7088,7 +8417,7 @@
         "include_empty_strings": "",
         "include_null_values": "",
         "x": 860,
-        "y": 560,
+        "y": 640,
         "wires": [
             [
                 "c20f89f2de5c6902"
@@ -7109,7 +8438,7 @@
         "write": true,
         "throwerror": false,
         "x": 670,
-        "y": 540,
+        "y": 620,
         "wires": [
             [
                 "c40aca5205869f43"
@@ -7136,7 +8465,7 @@
         "include_empty_strings": "",
         "include_null_values": "",
         "x": 870,
-        "y": 520,
+        "y": 600,
         "wires": [
             [
                 "0f1b22f8d12f3bcb"
@@ -7156,7 +8485,7 @@
         "overwriteFile": "false",
         "encoding": "utf8",
         "x": 1060,
-        "y": 520,
+        "y": 600,
         "wires": [
             []
         ]
@@ -7185,7 +8514,7 @@
         "payload": "{\"current\":0.34,\"voltage\":113.4,\"power\":9}",
         "payloadType": "json",
         "x": 220,
-        "y": 540,
+        "y": 620,
         "wires": [
             [
                 "b298019e3ead7f10"
@@ -7198,9 +8527,11 @@
         "z": "fe798ccc3bac8377",
         "g": "cc49724e187187ad",
         "name": "WriteAirBoxData",
-        "links": [],
+        "links": [
+            "37359c3853dfacf8"
+        ],
         "x": 215,
-        "y": 460,
+        "y": 540,
         "wires": [
             [
                 "82a97b9d8c0f5981"
@@ -7215,7 +8546,7 @@
         "name": "WritePowerMeterData",
         "links": [],
         "x": 215,
-        "y": 500,
+        "y": 580,
         "wires": [
             [
                 "b298019e3ead7f10"
@@ -7230,7 +8561,7 @@
         "name": "install node-red-contrib-fs-ops",
         "info": "node-red-contrib-fs-ops",
         "x": 460,
-        "y": 480,
+        "y": 560,
         "wires": []
     },
     {
@@ -7242,6 +8573,17 @@
         "info": "1. 讀取 device.json\n    讀取錯誤(不存在)，建立一空檔案\n    讀取正確 將檔案存放到 global 變數\n2. 寫檔案\n    將json 內容轉換為文字後寫入device.json (更新設備檔案)",
         "x": 990,
         "y": 80,
+        "wires": []
+    },
+    {
+        "id": "ef88df21dc297c60",
+        "type": "comment",
+        "z": "fe798ccc3bac8377",
+        "g": "cc49724e187187ad",
+        "name": "Write CSV file",
+        "info": "使用 日期當檔案名稱\n使用 dict key 當 header ",
+        "x": 430,
+        "y": 440,
         "wires": []
     },
     {
@@ -7994,7 +9336,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 640,
+        "x": 580,
         "y": 1080,
         "wires": [
             [
@@ -8077,10 +9419,12 @@
         ],
         "outputs": 1,
         "cts": true,
-        "x": 850,
+        "x": 770,
         "y": 1140,
         "wires": [
-            []
+            [
+                "114257fefb0a69d8"
+            ]
         ]
     },
     {
@@ -8097,7 +9441,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 840,
+        "x": 780,
         "y": 1080,
         "wires": []
     },
@@ -8119,7 +9463,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 450,
+        "x": 410,
         "y": 1080,
         "wires": [
             [
@@ -8171,7 +9515,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 660,
+        "x": 400,
         "y": 1140,
         "wires": [
             [
@@ -8188,6 +9532,375 @@
         "info": "固定10sec\n清除  table 後 \n抓取  device json 變數 顯示於 table ",
         "x": 190,
         "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "32ed4f7fd54b2e63",
+        "type": "ui_text",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "b34d28a2c332e9f6",
+        "group": "d96c0dea78d55eb4",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "修改設備",
+        "label": "修改設備",
+        "format": "{{msg.payload.uid}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 580,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "e443b3dbded61b47",
+        "type": "ui_text_input",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "b34d28a2c332e9f6",
+        "name": "",
+        "label": "裝置位置",
+        "tooltip": "",
+        "group": "d96c0dea78d55eb4",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "text",
+        "delay": "0",
+        "topic": "devPosition",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "str",
+        "x": 580,
+        "y": 1440,
+        "wires": [
+            [
+                "6794e903ccefe246"
+            ]
+        ]
+    },
+    {
+        "id": "dc19095f1b40247a",
+        "type": "link in",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "b34d28a2c332e9f6",
+        "name": "modifyDevice",
+        "links": [
+            "b33651dd9eb76ec5",
+            "114257fefb0a69d8"
+        ],
+        "x": 245,
+        "y": 1460,
+        "wires": [
+            [
+                "32ed4f7fd54b2e63",
+                "346c7148bb80e8e2",
+                "2946ee7249788a37"
+            ]
+        ]
+    },
+    {
+        "id": "de269f7f4dfbef2f",
+        "type": "ui_text_input",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "b34d28a2c332e9f6",
+        "name": "",
+        "label": "裝置敘述",
+        "tooltip": "",
+        "group": "d96c0dea78d55eb4",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "text",
+        "delay": "0",
+        "topic": "devType",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "str",
+        "x": 580,
+        "y": 1360,
+        "wires": [
+            [
+                "6794e903ccefe246"
+            ]
+        ]
+    },
+    {
+        "id": "06748dd07a016c00",
+        "type": "ui_button",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "b34d28a2c332e9f6",
+        "name": "",
+        "group": "d96c0dea78d55eb4",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "設定",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "SET",
+        "payloadType": "str",
+        "topic": "SET",
+        "topicType": "str",
+        "x": 590,
+        "y": 1480,
+        "wires": [
+            [
+                "6794e903ccefe246"
+            ]
+        ]
+    },
+    {
+        "id": "346c7148bb80e8e2",
+        "type": "function",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "b34d28a2c332e9f6",
+        "name": "getuid",
+        "func": "return {payload: msg.payload.uid ,topic :\"uid\"};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 1520,
+        "wires": [
+            [
+                "6794e903ccefe246"
+            ]
+        ]
+    },
+    {
+        "id": "6794e903ccefe246",
+        "type": "function",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "b34d28a2c332e9f6",
+        "name": "SetDevice",
+        "func": "context.data = context.data || {}\n\nif (msg.topic !=\"SET\")\n    switch (msg.topic){\n        case (\"uid\"):\n            context.data.uid = msg.payload\n            msg =null\n            break;\n        case (\"devType\"):\n            context.data.type = msg.payload\n            msg =null\n            break;\n        case (\"devPosition\"):\n            context.data.position = msg.payload\n            msg = null\n            break;\n        case (\"devName\"):\n            context.data.devName = msg.payload\n            msg = null\n            break;\n        default:\n            msg = null\n            break;\n            \n    }\nelse {\n    if (context.data.uid != null && \n        context.data.type != null && \n        context.data.position != null &&\n        context.data.devName != null ){\n        var jsonFile = global.get(\"jsonFile\")\n        jsonFile.devices.forEach(function(item) {\n            if (item.uid == context.data.uid){\n                item.devType = context.data.type\n                item.devPosition = context.data.position\n                item.devName = context.data.devName\n            }\n        });\n        global.set(\"jsonFile\" , jsonFile)\n        return {payload : jsonFile}  \n    }\n}\n\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 1420,
+        "wires": [
+            [
+                "c3f0a903856a1019",
+                "61c90cc82e8f3d8c",
+                "36b5c2912304c91f"
+            ]
+        ]
+    },
+    {
+        "id": "c3f0a903856a1019",
+        "type": "link out",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "b34d28a2c332e9f6",
+        "name": "To Write File",
+        "mode": "link",
+        "links": [
+            "da70d3343c11c582"
+        ],
+        "x": 935,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "398d2dd45cd41bdc",
+        "type": "ui_dropdown",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "b34d28a2c332e9f6",
+        "name": "",
+        "label": "裝置類別名",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "d96c0dea78d55eb4",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "options": [
+            {
+                "label": "中繼器",
+                "value": "relay",
+                "type": "str"
+            },
+            {
+                "label": "數位IO",
+                "value": "DIO",
+                "type": "str"
+            },
+            {
+                "label": "開關",
+                "value": "switch",
+                "type": "str"
+            },
+            {
+                "label": "報警器",
+                "value": "alert",
+                "type": "str"
+            },
+            {
+                "label": "彩色燈",
+                "value": "RGB_light",
+                "type": "str"
+            },
+            {
+                "label": "空氣感測器",
+                "value": "sensor",
+                "type": "str"
+            },
+            {
+                "label": "插座",
+                "value": "plug",
+                "type": "str"
+            },
+            {
+                "label": "控制器",
+                "value": "controller",
+                "type": "str"
+            },
+            {
+                "label": "偵測器",
+                "value": "detector",
+                "type": "str"
+            },
+            {
+                "label": "風扇",
+                "value": "fan",
+                "type": "str"
+            },
+            {
+                "label": "電錶",
+                "value": "PowerMeter",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "devName",
+        "topicType": "str",
+        "className": "",
+        "x": 590,
+        "y": 1400,
+        "wires": [
+            [
+                "6794e903ccefe246"
+            ]
+        ]
+    },
+    {
+        "id": "61c90cc82e8f3d8c",
+        "type": "debug",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "b34d28a2c332e9f6",
+        "name": "debug 36",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "2946ee7249788a37",
+        "type": "function",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "b34d28a2c332e9f6",
+        "name": "set \"\"",
+        "func": "return {payload: \"\"};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 1440,
+        "wires": [
+            [
+                "e443b3dbded61b47",
+                "398d2dd45cd41bdc",
+                "de269f7f4dfbef2f"
+            ]
+        ]
+    },
+    {
+        "id": "c5327726061bad44",
+        "type": "ui_toast",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "b34d28a2c332e9f6",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 1150,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "36b5c2912304c91f",
+        "type": "change",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "b34d28a2c332e9f6",
+        "name": "SetMsg",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "SET OK",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 1420,
+        "wires": [
+            [
+                "c5327726061bad44"
+            ]
+        ]
+    },
+    {
+        "id": "114257fefb0a69d8",
+        "type": "link out",
+        "z": "8cbec6d1d47d2ee2",
+        "g": "0d53d99ff5bb2375",
+        "name": "to modify device",
+        "mode": "link",
+        "links": [
+            "dc19095f1b40247a"
+        ],
+        "x": 895,
+        "y": 1140,
         "wires": []
     },
     {
@@ -9159,5 +10872,357 @@
                 "d0b81c7f556f5f6a"
             ]
         ]
+    },
+    {
+        "id": "33c461c992ca2416",
+        "type": "change",
+        "z": "f4d5b0e1aaeccda0",
+        "name": "Set RTU uid",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "SMARTBOX",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "uid",
+                "pt": "msg",
+                "to": "0x0102",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "channel",
+                "pt": "msg",
+                "to": "RTU",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 970,
+        "y": 180,
+        "wires": [
+            [
+                "7e19022d5f63866a"
+            ]
+        ]
+    },
+    {
+        "id": "c2cfeca8c64ba909",
+        "type": "function",
+        "z": "f4d5b0e1aaeccda0",
+        "name": "IR RTU CRC並重組",
+        "func": "function crc16(buffer) {\n    var crc = 0xFFFF;\n    var odd;\n\n    for (var i = 0; i < buffer.length; i++) {\n        crc ^= buffer[i];\n\n        for (var j = 0; j < 8; j++) {\n            odd = crc & 0x0001;\n            crc >>= 1;\n            if (odd) {\n                crc ^= 0xA001;\n            }\n        }\n    }\n\n    return crc;\n}\n\nfunction convertUint8_to_hexStr(uint8_array) {\n    var hex_str = \"\";\n    uint8_array.forEach(function (element) {\n        hex_str += element.toString(16).padStart(2, '0');\n    });\n    return hex_str;\n}\n\n\nmsg.payload = msg.cmd + msg.payload\nvar msg_len = msg.payload.length;\nvar Rs485Data = new Uint8Array(msg_len/2+2);\n\nfor (var i = 0; i < Rs485Data.length-2; i++) {\n    Rs485Data[i] = parseInt(msg.payload.substr(i * 2, 2), 16);\n}\nvar CRC = crc16(Rs485Data.slice(0, msg_len / 2));\nnode.warn(\"crc \"+ CRC);\nRs485Data[msg_len/2] = CRC & 0xFF; // Low byte\nRs485Data[msg_len/2+1] = (CRC>>8) & 0xFF; // High byte\n\nvar str = convertUint8_to_hexStr(Rs485Data).toUpperCase();\nreturn { payload:str};\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 180,
+        "wires": [
+            [
+                "33c461c992ca2416"
+            ]
+        ]
+    },
+    {
+        "id": "7dfa72b2010b4c77",
+        "type": "ui_button",
+        "z": "f4d5b0e1aaeccda0",
+        "name": "Learn BTN1",
+        "group": "8f53c092566fe14a",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "學習按鈕 1",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "01",
+        "payloadType": "str",
+        "topic": "address",
+        "topicType": "str",
+        "x": 330,
+        "y": 80,
+        "wires": [
+            [
+                "2f0ee24cad36498d"
+            ]
+        ]
+    },
+    {
+        "id": "00b5596ffa91d37b",
+        "type": "ui_button",
+        "z": "f4d5b0e1aaeccda0",
+        "name": "Learn BTN2",
+        "group": "8f53c092566fe14a",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "學習按鈕 2",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "02",
+        "payloadType": "str",
+        "topic": "address",
+        "topicType": "msg",
+        "x": 330,
+        "y": 120,
+        "wires": [
+            [
+                "2f0ee24cad36498d"
+            ]
+        ]
+    },
+    {
+        "id": "5d3ccd2d5857ed99",
+        "type": "ui_button",
+        "z": "f4d5b0e1aaeccda0",
+        "name": "Learn BTN3",
+        "group": "8f53c092566fe14a",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "學習按鈕 3",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "03",
+        "payloadType": "str",
+        "topic": "address",
+        "topicType": "msg",
+        "x": 330,
+        "y": 160,
+        "wires": [
+            [
+                "2f0ee24cad36498d"
+            ]
+        ]
+    },
+    {
+        "id": "805c909337dceba1",
+        "type": "ui_button",
+        "z": "f4d5b0e1aaeccda0",
+        "name": "Learn BTN4",
+        "group": "8f53c092566fe14a",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "學習按鈕 4",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "04",
+        "payloadType": "str",
+        "topic": "address",
+        "topicType": "msg",
+        "x": 330,
+        "y": 200,
+        "wires": [
+            [
+                "2f0ee24cad36498d"
+            ]
+        ]
+    },
+    {
+        "id": "c42fd37f84059d86",
+        "type": "ui_button",
+        "z": "f4d5b0e1aaeccda0",
+        "name": "BTN1",
+        "group": "3316ae35256263da",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "按鈕 1",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "01",
+        "payloadType": "str",
+        "topic": "address",
+        "topicType": "msg",
+        "x": 330,
+        "y": 260,
+        "wires": [
+            [
+                "1781e9899708af09"
+            ]
+        ]
+    },
+    {
+        "id": "40d75a10f7c539a0",
+        "type": "ui_button",
+        "z": "f4d5b0e1aaeccda0",
+        "name": "BTN2",
+        "group": "3316ae35256263da",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "按鈕 2",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "02",
+        "payloadType": "str",
+        "topic": "address",
+        "topicType": "msg",
+        "x": 330,
+        "y": 300,
+        "wires": [
+            [
+                "1781e9899708af09"
+            ]
+        ]
+    },
+    {
+        "id": "6790c943168416cb",
+        "type": "ui_button",
+        "z": "f4d5b0e1aaeccda0",
+        "name": "BTN3",
+        "group": "3316ae35256263da",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "按鈕 3",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "03",
+        "payloadType": "str",
+        "topic": "address",
+        "topicType": "msg",
+        "x": 330,
+        "y": 340,
+        "wires": [
+            [
+                "1781e9899708af09"
+            ]
+        ]
+    },
+    {
+        "id": "ae0e9ec4406fcce6",
+        "type": "ui_button",
+        "z": "f4d5b0e1aaeccda0",
+        "name": "BTN4",
+        "group": "3316ae35256263da",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "按鈕 4",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "04",
+        "payloadType": "str",
+        "topic": "address",
+        "topicType": "msg",
+        "x": 330,
+        "y": 380,
+        "wires": [
+            [
+                "1781e9899708af09"
+            ]
+        ]
+    },
+    {
+        "id": "2f0ee24cad36498d",
+        "type": "change",
+        "z": "f4d5b0e1aaeccda0",
+        "name": "Set Learn CMD",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cmd",
+                "pt": "msg",
+                "to": "A506001600",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 160,
+        "wires": [
+            [
+                "c2cfeca8c64ba909"
+            ]
+        ]
+    },
+    {
+        "id": "1781e9899708af09",
+        "type": "change",
+        "z": "f4d5b0e1aaeccda0",
+        "name": "Set CTRL CMD",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cmd",
+                "pt": "msg",
+                "to": "A506001800",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 220,
+        "wires": [
+            [
+                "c2cfeca8c64ba909"
+            ]
+        ]
+    },
+    {
+        "id": "7e19022d5f63866a",
+        "type": "link out",
+        "z": "f4d5b0e1aaeccda0",
+        "name": "Send MESH CMD",
+        "mode": "link",
+        "links": [
+            "d9717fc33326853d"
+        ],
+        "x": 1105,
+        "y": 180,
+        "wires": []
     }
 ]

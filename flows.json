@@ -9370,7 +9370,7 @@
         "z": "8cbec6d1d47d2ee2",
         "g": "ecafa6091ee23aa4",
         "name": "Add Node",
-        "func": "var jsonFile = global.get(\"jsonFile\")\nvar uid = msg.payload.uid\nvar devMac = msg.payload.mac\nvar device = { devMac, devName: \"\", devType: msg.payload , devPosition :\"\" , devGroup :\"\" , uid, \"state\": 1 }\njsonFile.devices.push(device)\nglobal.set(\"jsonFile\", jsonFile)\nreturn { payload: jsonFile };",
+        "func": "var jsonFile = global.get(\"jsonFile\")\nvar uid = msg.payload.uid\nvar devMac = msg.payload.mac\nvar device = {\n    devMac, \n    devName: \"\",\n    devType: \"\",\n    devPosition: \"\",\n    devGroup: \"\",\n    uid,\n    \"state\": 1\n}\njsonFile.devices.push(device)\nglobal.set(\"jsonFile\", jsonFile)\nreturn { payload: jsonFile };",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -10966,7 +10966,7 @@
                 "t": "set",
                 "p": "uid",
                 "pt": "msg",
-                "to": "0x0102",
+                "to": "0x0103",
                 "tot": "str"
             },
             {
@@ -10986,7 +10986,8 @@
         "y": 180,
         "wires": [
             [
-                "7e19022d5f63866a"
+                "7e19022d5f63866a",
+                "5ccb651056d9b4e6"
             ]
         ]
     },
@@ -11299,6 +11300,23 @@
         ],
         "x": 1105,
         "y": 180,
+        "wires": []
+    },
+    {
+        "id": "5ccb651056d9b4e6",
+        "type": "debug",
+        "z": "f4d5b0e1aaeccda0",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 240,
         "wires": []
     }
 ]

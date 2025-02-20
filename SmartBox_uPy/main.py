@@ -1,6 +1,7 @@
 from machine import UART,Pin
 from utime import sleep_ms,ticks_ms,ticks_diff
 from mesh_device import Mesh_Device
+import gc
 
 class DigitalOut():
     
@@ -49,9 +50,14 @@ class Rs485_Agent():
     
     def receive(self,timeout = 500):
         start = ticks_ms()
+        recv_data = b''
+
         while ticks_diff(ticks_ms(),start) < timeout:
+
             if self.uart.any():
-                return self.uart.readline()
+                recv_data += (self.uart.read(self.uart.any()))
+            sleep_ms(10)
+        return recv_data
 
 if __name__ == '__main__':
     from machine import Pin,LED,WDT
@@ -114,9 +120,11 @@ if __name__ == '__main__':
                 return (HEADER + SET_TYPE + STATUS_OK + address)
     
         if len(data) > 3 and (type == RTU_TYPE) and (header == HEADER):
+ 
             modbus.send(data[3:])
-            recv_data = modbus.receive(timeout = 200)
-            if recv_data:
+            recv_data = modbus.receive(timeout = 500)
+            if recv_data and recv_data != b'':
+ 
                 return (HEADER + RTU_TYPE + recv_data)  
         return (header + type + STATUS_ERROR)  
         #print ("Error packet",len(data),data[0],data[1],data[2],list(data))
@@ -149,7 +157,9 @@ if __name__ == '__main__':
 
         if check_key_time(unprov_KEY) > 5000:
             g_led.off()
-            mesh.unprov()  
+            mesh.unprov() 
+        if gc.mem_free() < 1000: 
+            gc.collect()
         time.sleep(0.5)
 
  

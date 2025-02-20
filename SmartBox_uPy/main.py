@@ -87,6 +87,7 @@ if __name__ == '__main__':
     # mesh device define packet format
     #          Header(2) + Type(1) + Addr(1) Data(n)
     # Response Header(2) + Type(1) + Status(1)  Data(n)
+
     
     HEADER   = const (b'\x82\x76')
     GET_TYPE = const (b'\x00') 
@@ -120,12 +121,18 @@ if __name__ == '__main__':
                 return (HEADER + SET_TYPE + STATUS_OK + address)
     
         if len(data) > 3 and (type == RTU_TYPE) and (header == HEADER):
- 
             modbus.send(data[3:])
             recv_data = modbus.receive(timeout = 500)
             if recv_data and recv_data != b'':
- 
-                return (HEADER + RTU_TYPE + recv_data)  
+                return (HEADER + RTU_TYPE + recv_data) 
+        else : # RTU bypass mode
+            modbus.send(data)
+            print ("send:",data)
+            recv_data = modbus.receive(timeout = 500)
+            print ("recv:",recv_data)
+            if recv_data and recv_data != b'':
+                return (recv_data)
+
         return (header + type + STATUS_ERROR)  
         #print ("Error packet",len(data),data[0],data[1],data[2],list(data))
 

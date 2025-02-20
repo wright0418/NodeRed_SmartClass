@@ -2378,7 +2378,7 @@
         "type": "function",
         "z": "149d3c3e2a44a954",
         "name": "Smart Box",
-        "func": "var uid = msg.uid\n\nvar baudrate = 9600\nvar baudRate_dict = { 2400: \"00\", 4800: \"01\", 9600: \"02\" }\nvar SetbaudrateAddr = '80'\nvar HEADER = '8276'\nvar RTU_CMD = '02'\nvar SET_CMD = '01'\nvar GET_CMD = \"00\"\nvar SENSOR_CMD = \"03\"\nvar MemAddr = '00'\nvar DataLength = '01'\n\nif (msg.channel == \"RTU\"){\n    var Cmd = \"AT+MDTS \" + uid + \" 0 0 0 0x\" + HEADER + RTU_CMD + msg.payload;\n    return { payload: Cmd };\n}\nif (msg.channel == \"SENSOR\") {\n    var Cmd = \"AT+MDTS \" + uid + \" 0 0 0 0x\" + HEADER + SENSOR_CMD + MemAddr;\n    return { payload: Cmd };\n}\n\nif (msg.channel == \"DO\") {\n    var ctrl = \"\"\n    if (msg.payload == true)\n        ctrl = \"01\"\n    else \n        ctrl = \"00\"\n\n    var Cmd = \"AT+MDTS \" + uid + \" 0 0 0 0x\" + HEADER + SET_CMD + MemAddr + ctrl;\n    return { payload: Cmd };\n}\n//Set DI read\nif (msg.channel == \"DI\") {\n    var Cmd = \"AT+MDTS \" + uid + \" 0 0 0 0x\" + HEADER + GET_CMD + MemAddr;\n    return { payload: Cmd };\n}\n\nif (msg.channel == \"SETRTUBUARD\") {\n    baudrate = msg.payload\n    var Cmd = \"AT+MDTS \" + uid + \" 0 0 0 0x\" + HEADER + SET_CMD + SetbaudrateAddr + baudRate_dict[baudrate];\n    return { payload: Cmd };\n}",
+        "func": "var uid = msg.uid\n\nvar baudrate = 9600\nvar baudRate_dict = { 2400: \"00\", 4800: \"01\", 9600: \"02\" }\nvar SetbaudrateAddr = '80'\nvar HEADER = '8276'\nvar RTU_CMD = '02'\nvar SET_CMD = '01'\nvar GET_CMD = \"00\"\nvar SENSOR_CMD = \"03\"\nvar MemAddr = '00'\nvar DataLength = '01'\nif (msg.channel == \"RTU-BYPASS\"){\n    var Cmd = \"AT+MDTS \" + uid + \" 0 0 0 0x\" +  msg.payload;\n    return { payload: Cmd };\n}\n\nif (msg.channel == \"RTU\"){\n    var Cmd = \"AT+MDTS \" + uid + \" 0 0 0 0x\" + HEADER + RTU_CMD + msg.payload;\n    return { payload: Cmd };\n}\nif (msg.channel == \"SENSOR\") {\n    var Cmd = \"AT+MDTS \" + uid + \" 0 0 0 0x\" + HEADER + SENSOR_CMD + MemAddr;\n    return { payload: Cmd };\n}\n\nif (msg.channel == \"DO\") {\n    var ctrl = \"\"\n    if (msg.payload == true)\n        ctrl = \"01\"\n    else \n        ctrl = \"00\"\n\n    var Cmd = \"AT+MDTS \" + uid + \" 0 0 0 0x\" + HEADER + SET_CMD + MemAddr + ctrl;\n    return { payload: Cmd };\n}\n//Set DI read\nif (msg.channel == \"DI\") {\n    var Cmd = \"AT+MDTS \" + uid + \" 0 0 0 0x\" + HEADER + GET_CMD + MemAddr;\n    return { payload: Cmd };\n}\n\nif (msg.channel == \"SETRTUBUARD\") {\n    baudrate = msg.payload\n    var Cmd = \"AT+MDTS \" + uid + \" 0 0 0 0x\" + HEADER + SET_CMD + SetbaudrateAddr + baudRate_dict[baudrate];\n    return { payload: Cmd };\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -4165,6 +4165,45 @@
         "x": 1040,
         "y": 420,
         "wires": []
+    },
+    {
+        "id": "26f0b788f61c59ed",
+        "type": "inject",
+        "z": "298c337f544e92d5",
+        "name": "SnartBox_RTU BYPASS_read",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "uid",
+                "v": "0x0102",
+                "vt": "str"
+            },
+            {
+                "p": "channel",
+                "v": "RTU-BYPASS",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "SMARTBOX",
+        "payload": "0103000002C40B",
+        "payloadType": "str",
+        "x": 540,
+        "y": 500,
+        "wires": [
+            [
+                "a1b52ca030f104ee"
+            ]
+        ]
     },
     {
         "id": "cbc8c7dde36554ed",
@@ -7461,13 +7500,14 @@
         "links": [
             "2708002fe7df1c7f"
         ],
-        "x": 525,
-        "y": 680,
+        "x": 405,
+        "y": 660,
         "wires": [
             [
                 "df8a50a79b3aba2d",
                 "58d90bb39cddf1ef",
-                "e907357d7fa5e6a5"
+                "e907357d7fa5e6a5",
+                "b2b2cea62f8caf90"
             ]
         ]
     },
@@ -7483,8 +7523,8 @@
                 "type": "str"
             }
         ],
-        "x": 780,
-        "y": 680,
+        "x": 660,
+        "y": 660,
         "wires": [
             [],
             [
@@ -7514,8 +7554,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1060,
-        "y": 680,
+        "x": 940,
+        "y": 660,
         "wires": []
     },
     {
@@ -7600,8 +7640,8 @@
         "links": [
             "bea7f99d065ec6e8"
         ],
-        "x": 1025,
-        "y": 620,
+        "x": 905,
+        "y": 600,
         "wires": []
     },
     {
@@ -7616,8 +7656,8 @@
                 "type": "str"
             }
         ],
-        "x": 770,
-        "y": 720,
+        "x": 650,
+        "y": 700,
         "wires": [
             [],
             [
@@ -7850,8 +7890,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
-        "y": 640,
+        "x": 620,
+        "y": 620,
         "wires": []
     },
     {
@@ -7908,8 +7948,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1060,
-        "y": 720,
+        "x": 940,
+        "y": 700,
         "wires": []
     },
     {
@@ -7943,8 +7983,44 @@
         "links": [
             "0fb8096ba6ed2dc0"
         ],
-        "x": 1025,
-        "y": 580,
+        "x": 905,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "b2b2cea62f8caf90",
+        "type": "function",
+        "z": "cb274e359e92b965",
+        "name": "Parse MDTG raw data (RTU-BYPASS) , uid=0x0102",
+        "func": "var mdtg_uid = msg.payload[1]\nvar datahex = msg.payload[3]\nvar uid = \"0x0102\"\n\nif (mdtg_uid == uid) {\n    var data = parseInt(datahex.slice(4, 8),16)\n    return {payload : data /10}\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 780,
+        "wires": [
+            [
+                "794857f107dac86f"
+            ]
+        ]
+    },
+    {
+        "id": "794857f107dac86f",
+        "type": "debug",
+        "z": "cb274e359e92b965",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 780,
         "wires": []
     },
     {

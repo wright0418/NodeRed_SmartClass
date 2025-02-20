@@ -127,9 +127,7 @@ if __name__ == '__main__':
                 return (HEADER + RTU_TYPE + recv_data) 
         else : # RTU bypass mode
             modbus.send(data)
-            print ("send:",data)
             recv_data = modbus.receive(timeout = 500)
-            print ("recv:",recv_data)
             if recv_data and recv_data != b'':
                 return (recv_data)
 

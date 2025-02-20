@@ -1,0 +1,122 @@
+{
+    "0x0100": {
+        "name": "BSW",
+        "mac_addr": "700200003AA2",
+        "uid": "0x0100",
+        "state": 5
+    },
+    "0x0101": {
+        "name": "FSW",
+        "mac_addr": "700200003AA9",
+        "uid": "0x0101",
+        "state": 5
+    },
+    "0x0103": {
+        "name": "DoorSW",
+        "mac_addr": "700100011917",
+        "uid": "0x0103",
+        "state": 0
+    },
+    "0x0104": {
+        "name": "DHT",
+        "mac_addr": "700100011924",
+        "uid": "0x0104",
+        "state": 5
+    },
+    "0x0105": {
+        "name": "PowerMeter",
+        "mac_addr": "70010001193F",
+        "uid": "0x0105",
+        "state": 5
+    },
+    "0x0106": {
+        "name": "IR_SW",
+        "mac_addr": "70010001190B",
+        "uid": "0x0106",
+        "state": 0
+    },
+    "0x0107": {
+        "name": "Led01",
+        "mac_addr": "700900010666",
+        "uid": "0x0107",
+        "state": 5
+    },
+    "0x0108": {
+        "name": "Led02",
+        "mac_addr": "6557000011D6",
+        "uid": "0x0108",
+        "state": 5
+    },
+    "0x0109": {
+        "name": "Led03",
+        "mac_addr": "6557000011C1",
+        "uid": "0x0109",
+        "state": 5
+    },
+    "0x010B": {
+        "name": "Led05",
+        "mac_addr": "6557000011CD",
+        "uid": "0x010B",
+        "state": 5
+    },
+    "0x010C": {
+        "name": "Led06",
+        "mac_addr": "6557000010F2",
+        "uid": "0x010C",
+        "state": 5
+    },
+    "0x010D": {
+        "name": "Led07",
+        "mac_addr": "65570000110A",
+        "uid": "0x010D",
+        "state": 5
+    },
+    "0x010E": {
+        "name": "Led08",
+        "mac_addr": "6557000011E4",
+        "uid": "0x010E",
+        "state": 5
+    },
+    "0x010F": {
+        "name": "Led09",
+        "mac_addr": "6557000011D9",
+        "uid": "0x010F",
+        "state": 5
+    },
+    "0x0111": {
+        "name": "Led11",
+        "mac_addr": "6557000011D7",
+        "uid": "0x0111",
+        "state": 5
+    },
+    "0x0112": {
+        "name": "Led12",
+        "mac_addr": "6557000011CE",
+        "uid": "0x0112",
+        "state": 5
+    },
+    "0x0113": {
+        "name": "Led13",
+        "mac_addr": "65570000110B",
+        "uid": "0x0113",
+        "state": 5
+    },
+    "0x0114": {
+        "name": "Led14",
+        "mac_addr": "6557000010E3",
+        "uid": "0x0114",
+        "state": 5
+    },
+    "0x0115": {
+        "name": "Led10",
+        "mac_addr": "70090001065E",
+        "uid": "0x0115",
+        "state": 5
+    },
+    "0x0116": {
+        "name": "Cancel",
+        "mac_addr": "700900010667",
+        "uid": "0x0116",
+        "state": ""
+    }
+}

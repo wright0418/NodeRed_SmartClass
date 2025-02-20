@@ -1,0 +1,187 @@
+{
+    "gwMac": "",
+    "gwType": "mini_PC",
+    "gwPosition": "主機位置",
+    "devices": [
+        {
+            "devMac": "70:02:00:00:3A:A2",
+            "devName": "",
+            "devType": "BSW",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x0100",
+            "state": 1
+        },
+        {
+            "devMac": "70:02:00:00:3A:A9",
+            "devName": "",
+            "devType": "FSW",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x0101",
+            "state": 1
+        },
+        {
+            "devMac": "70:01:00:01:19:17",
+            "devName": "",
+            "devType": "DoorSW",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x0103",
+            "state": 0
+        },
+        {
+            "devMac": "70:01:00:01:19:24",
+            "devName": "",
+            "devType": "DHT",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x0104",
+            "state": 1
+        },
+        {
+            "devMac": "70:01:00:01:19:3F",
+            "devName": "",
+            "devType": "PowerMeter",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x0105",
+            "state": 1
+        },
+        {
+            "devMac": "70:01:00:01:19:0B",
+            "devName": "",
+            "devType": "IR_SW",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x0106",
+            "state": 0
+        },
+        {
+            "devMac": "70:09:00:01:06:66",
+            "devName": "",
+            "devType": "Led01",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x0107",
+            "state": 1
+        },
+        {
+            "devMac": "65:57:00:00:11:D6",
+            "devName": "",
+            "devType": "Led02",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x0108",
+            "state": 1
+        },
+        {
+            "devMac": "65:57:00:00:11:C1",
+            "devName": "",
+            "devType": "Led03",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x0109",
+            "state": 1
+        },
+        {
+            "devMac": "65:57:00:00:11:CD",
+            "devName": "",
+            "devType": "Led05",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x010B",
+            "state": 1
+        },
+        {
+            "devMac": "65:57:00:00:10:F2",
+            "devName": "",
+            "devType": "Led06",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x010C",
+            "state": 1
+        },
+        {
+            "devMac": "65:57:00:00:11:0A",
+            "devName": "",
+            "devType": "Led07",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x010D",
+            "state": 1
+        },
+        {
+            "devMac": "65:57:00:00:11:E4",
+            "devName": "",
+            "devType": "Led08",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x010E",
+            "state": 1
+        },
+        {
+            "devMac": "65:57:00:00:11:D9",
+            "devName": "",
+            "devType": "Led09",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x010F",
+            "state": 1
+        },
+        {
+            "devMac": "65:57:00:00:11:D7",
+            "devName": "",
+            "devType": "Led11",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x0111",
+            "state": 1
+        },
+        {
+            "devMac": "65:57:00:00:11:CE",
+            "devName": "",
+            "devType": "Led12",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x0112",
+            "state": 1
+        },
+        {
+            "devMac": "65:57:00:00:11:0B",
+            "devName": "",
+            "devType": "Led13",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x0113",
+            "state": 1
+        },
+        {
+            "devMac": "65:57:00:00:10:E3",
+            "devName": "",
+            "devType": "Led14",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x0114",
+            "state": 1
+        },
+        {
+            "devMac": "70:09:00:01:06:5E",
+            "devName": "",
+            "devType": "Led10",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x0115",
+            "state": 1
+        },
+        {
+            "devMac": "70:09:00:01:06:67",
+            "devName": "",
+            "devType": "Cancel",
+            "devPosition": "",
+            "devGroup": "",
+            "uid": "0x0116",
+            "state": ""
+        }
+    ]
+}

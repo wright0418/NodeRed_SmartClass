@@ -35,7 +35,7 @@ class Rs485_Agent():
         self.uart_port = port 
         self.uart = UART(port, baudrate,timeout=500)
         self.char_3p5_time_ms = 3.5*(8+1+2)/baudrate *1000
-        self.ctrl_timebase_ms = (8+1+3)/baudrate *1000
+        self.ctrl_timebase_us = (8+1+3)/baudrate *1000000
     
     def set_uart_baudrate(self,baudrate) :
         self.uart.deinit()
@@ -43,9 +43,10 @@ class Rs485_Agent():
 
     def send(self, data):
         self.uart.read(self.uart.any())
+        delay_time = int(len(data)*self.ctrl_timebase_us)//1000
         self.ctl_pin.value(1)
         self.uart.write(data)
-        sleep_ms(int(len(data)*self.ctrl_timebase_ms))
+        sleep_ms(delay_time)
         self.ctl_pin.value(0)
     
     def receive(self,timeout = 500):

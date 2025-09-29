@@ -52,14 +52,15 @@ class Rs485_Agent:
         sleep_ms(delay_time)
         self.ctl_pin.value(0)
 
-    def receive(self, timeout=500):
+    def receive(self, timeout=300):
         start = ticks_ms()
         recv_data = b""
         while ticks_diff(ticks_ms(), start) < timeout:
             if self.uart.any():
                 recv_data += self.uart.read(self.uart.any())
+                start = ticks_ms()
             sleep_ms(10)
-        return recv_data
+        return recv_data if recv_data != b"" else None
 
 
 if __name__ == "__main__":
@@ -102,6 +103,10 @@ if __name__ == "__main__":
     GET_TYPE = const(b"\x00")
     SET_TYPE = const(b"\x01")
     RTU_TYPE = const(b"\x02")
+    KWS301_V_TYPE = const(b"\x03")
+    KWS301_I_TYPE = const(b"\x04")
+    KWS301_P_TYPE = const(b"\x05")
+    KWS301_KW_TYPE = const(b"\x06")
     ADDR = const(b"\x00")
     LENGTH = const(b"\x01")
     STATUS_OK = const(b"\x80")
@@ -123,6 +128,7 @@ if __name__ == "__main__":
         data = msg["msg"]
         type = bytes(data[2:3])
         header = bytes(data[:2])
+
         if len(data) == 4 and (type == GET_TYPE) and (header == HEADER):
             address = data[3:4]
             if address == b"\x00":  # for DI
@@ -139,18 +145,22 @@ if __name__ == "__main__":
                 set_baudrate = {0: 2400, 1: 4800, 2: 9600}
                 modbus.set_uart_baudrate(set_baudrate[data[4]])
                 return HEADER + SET_TYPE + STATUS_OK + address
-
-        if len(data) > 3 and (type == RTU_TYPE) and (header == HEADER):
+        if (
+            len(data) >= 3
+            and type in (KWS301_V_TYPE, KWS301_I_TYPE, KWS301_P_TYPE, RTU_TYPE, KWS301_KW_TYPE)
+            and header == HEADER
+        ):
             address = data[3:4]
             if address == b"\xa5":  # for IR RTU
                 modbus.send(data[3:])
-                recv_data = modbus.receive(timeout=1000)
+                recv_data = modbus.receive(timeout=300)
                 return HEADER + RTU_TYPE + recv_data
 
             retry = 0
-            while retry < 2:
+
+            while retry <= 1:
                 modbus.send(data[3:])
-                recv_data = modbus.receive(timeout=1500)
+                recv_data = modbus.receive(timeout=300)
 
                 if recv_data and len(recv_data) >= 2:
                     crc_calc = modbus_crc16(recv_data[:-2])
@@ -165,17 +175,20 @@ if __name__ == "__main__":
                     """
                     if crc_calc == crc_recv:
                         # print("CRC 正確")
-                        return HEADER + RTU_TYPE + recv_data
+                        return HEADER + type + recv_data
                     else:
                         # print("CRC 錯誤，重送")
                         retry += 1
                         pass
+                elif recv_data == b"" or recv_data is None:
+                    return header + type + STATUS_ERROR
+
             # 若兩次都錯誤，回傳錯誤
             # print("CRC 連續錯誤，回傳 STATUS_ERROR")
             return header + type + STATUS_ERROR
         else:  # RTU bypass mode
             modbus.send(data)
-            recv_data = modbus.receive(timeout=500)
+            recv_data = modbus.receive(timeout=300)
             if recv_data and recv_data != b"":
                 return recv_data
         return header + type + STATUS_ERROR
@@ -192,7 +205,8 @@ if __name__ == "__main__":
         result = mesh_callback(msg=simulated_data)
         try:
             with open("simulated_msg_log.txt", "a") as f:
-                f.write("{}\n".format(str(binascii.hexlify(result[3:]), "utf-8")))
+                f.write("{}\n".format(
+                    str(binascii.hexlify(result[3:]), "utf-8")))
         except Exception as e:
             pass
 
@@ -205,7 +219,7 @@ if __name__ == "__main__":
     mesh = Mesh_Device(1)
     mesh.recv_callback = mesh_callback
 
-    wdt = WDT(timeout=2000)
+    wdt = WDT(timeout=10000)
 
     while True:
         wdt.feed()
